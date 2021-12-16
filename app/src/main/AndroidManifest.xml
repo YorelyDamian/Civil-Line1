@@ -10,6 +10,30 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CivilLine1">
         <activity
+            android:name=".MainActivity9"
+            android:exported="true" />
+        <activity
+            android:name=".MainActivity8"
+            android:exported="true" />
+        <activity
+            android:name=".MainActivity7"
+            android:exported="true" />
+        <activity
+            android:name=".MainActivity6"
+            android:exported="true" />
+        <activity
+            android:name=".MainActivity5"
+            android:exported="true" />
+        <activity
+            android:name=".MainActivity4"
+            android:exported="true" />
+        <activity
+            android:name=".MainActivity3"
+            android:exported="true" />
+        <activity
+            android:name=".MainActivity2"
+            android:exported="true" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

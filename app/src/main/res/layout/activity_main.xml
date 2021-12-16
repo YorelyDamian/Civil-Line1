@@ -28,8 +28,8 @@
                 android:textColor="#34495e"
                 android:textSize="40sp"
                 android:textStyle="italic" />
-        </LinearLayout>
 
+        </LinearLayout>
     </LinearLayout>
 
 </LinearLayout>
