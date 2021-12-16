@@ -9,6 +9,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="Primary">#64B5F6</color>
     <color name="colorHint">#DDDDDD</color>
+    <color name="colorOperaciones">#F5F5F5</color>
 
 
 </resources>
