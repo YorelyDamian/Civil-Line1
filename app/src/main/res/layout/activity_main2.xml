@@ -104,12 +104,4 @@
             />
     </LinearLayout>
 
-    <!--Segundo Rectangulo Azul-->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:background="@color/Primary"
-        android:orientation="vertical"
-        android:layout_marginTop="90dp">
-    </LinearLayout>
 </LinearLayout>
