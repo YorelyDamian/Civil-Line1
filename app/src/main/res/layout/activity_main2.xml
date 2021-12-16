@@ -13,7 +13,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:background="@color/purple_500"
+        android:background="@color/Primary"
         android:orientation="vertical">
     </LinearLayout>
 
@@ -108,7 +108,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:background="@color/purple_500"
+        android:background="@color/Primary"
         android:orientation="vertical"
         android:layout_marginTop="90dp">
     </LinearLayout>
