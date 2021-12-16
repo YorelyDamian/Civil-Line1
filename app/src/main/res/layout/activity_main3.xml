@@ -6,4 +6,154 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity3">
 
+
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:orientation="vertical">
+
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="50dp"
+           android:background="@color/Primary"
+           >
+
+           <ImageButton
+               android:id="@+id/frame3Return"
+               android:layout_width="50dp"
+               android:layout_height="50dp"
+               android:backgroundTint="#00FFFFFF"
+               android:src="@drawable/ic_return"
+               tools:ignore="SpeakableTextPresentCheck" />
+
+           <ImageView
+               android:layout_width="200dp"
+               android:layout_height="50dp"
+               android:layout_gravity="center_horizontal"
+               android:layout_marginStart="40dp"
+               android:layout_marginTop="20dp"
+               android:src="@drawable/header"
+               android:layout_marginEnd="20dp"
+               />
+
+           <ImageButton
+               android:id="@+id/frame3Save"
+               android:layout_width="50dp"
+               android:layout_height="50dp"
+               android:backgroundTint="#00FFFFFF"
+               android:src="@drawable/ic_save"
+               tools:ignore="SpeakableTextPresentCheck" />
+
+           <ImageButton
+               android:id="@+id/frame3Clear"
+               android:layout_width="50dp"
+               android:layout_height="50dp"
+               android:backgroundTint="#00FFFFFF"
+               android:src="@drawable/escoba"
+               tools:ignore="SpeakableTextPresentCheck"
+               />
+
+       </LinearLayout>
+
+
+       <TextView
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:text="@string/curva_horizontal_simple"
+           android:textSize="20dp"
+           android:layout_marginTop="10dp"
+           android:layout_marginBottom="15dp"
+           android:layout_gravity="center_horizontal"/>
+
+       <com.google.android.material.textfield.TextInputLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:layout_marginStart="70dp"
+           android:layout_marginEnd="70dp"
+           style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+           app:startIconDrawable="@drawable/delta"
+           android:layout_marginBottom="10dp"
+           >
+           <com.google.android.material.textfield.TextInputEditText
+               android:id="@+id/deltaSimple"
+               android:layout_width="match_parent"
+               android:layout_height="match_parent"
+               android:hint="@string/ang_entre_tangentes"
+               android:textColorHint="@color/colorHint"
+               />
+       </com.google.android.material.textfield.TextInputLayout>
+
+
+       <com.google.android.material.textfield.TextInputLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:layout_marginStart="70dp"
+           android:layout_marginEnd="70dp"
+           style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+           app:startIconDrawable="@drawable/pi"
+           android:layout_marginBottom="10dp"
+           >
+           <com.google.android.material.textfield.TextInputEditText
+               android:id="@+id/PISimple"
+               android:layout_width="match_parent"
+               android:layout_height="match_parent"
+               android:hint="@string/punto_de_interseccion"
+               android:textColorHint="@color/colorHint"
+               />
+       </com.google.android.material.textfield.TextInputLayout>
+
+
+       <com.google.android.material.textfield.TextInputLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:layout_marginStart="70dp"
+           android:layout_marginEnd="70dp"
+           style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+           app:startIconDrawable="@drawable/vp"
+           android:layout_marginBottom="10dp"
+           >
+           <com.google.android.material.textfield.TextInputEditText
+               android:id="@+id/VPSimple"
+               android:layout_width="match_parent"
+               android:layout_height="match_parent"
+               android:hint="@string/velocidad_del_proyecto"
+               android:textColorHint="@color/colorHint"
+               />
+       </com.google.android.material.textfield.TextInputLayout>
+
+
+       <com.google.android.material.textfield.TextInputLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:layout_marginStart="70dp"
+           android:layout_marginEnd="70dp"
+           style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+           app:startIconDrawable="@drawable/gc"
+           android:layout_marginBottom="10dp"
+           >
+           <com.google.android.material.textfield.TextInputEditText
+               android:id="@+id/GCSimple"
+               android:layout_width="match_parent"
+               android:layout_height="match_parent"
+               android:hint="@string/grado_de_la_curva"
+               android:textColorHint="@color/colorHint"
+               />
+       </com.google.android.material.textfield.TextInputLayout>
+
+       <fragment
+           android:id="@+id/VistaGraficaSimple"
+           android:layout_width="300dp"
+           android:layout_height="300dp"
+           android:layout_gravity="center_horizontal"/>
+
+
+       <com.google.android.material.button.MaterialButton
+           android:id="@+id/btnOperacionesSimple"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:text="Operaciones"
+           android:layout_gravity="center_horizontal"
+           app:cornerRadius="20dp"/>
+   </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
