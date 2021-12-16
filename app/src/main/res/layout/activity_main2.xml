@@ -1,9 +1,115 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity2">
+    tools:context=".MainActivity2"
+    android:background="#fdfefe"
+    android:orientation="vertical"
+    android:layout_gravity="center">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <!--Primer Rectangulo Azul-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/purple_500"
+        android:orientation="vertical">
+    </LinearLayout>
+
+    <!--Contenedor de RadioButton-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        android:layout_marginTop="110dp">
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            android:checkedButton="@+id/radio_button_1"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center">
+            <RadioButton
+                android:id="@+id/radioHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="   Curva Horizontal Simple"
+                android:textSize="20sp"
+                android:drawableLeft="@drawable/lineas_curvas"/>
+            <RadioButton
+                android:id="@+id/radioEspiral"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="   Curva en Espiral"
+                android:textSize="20sp"
+                android:drawableLeft="@drawable/curva"/>
+        </RadioGroup>
+    </LinearLayout>
+
+    <!--Linea negra y Direccion-->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Dirección"
+        android:textAlignment="center"
+        android:textColor="#34495e"
+        android:textSize="20sp"
+        android:layout_marginTop="70dp"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/black"
+        android:orientation="vertical">
+    </LinearLayout>
+
+    <!--Izquiera o Derecha Switch-->
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginTop="70dp"
+        android:layout_gravity="center">
+
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:checked="true"
+            android:text="Izquierda   "
+            android:textSize="16sp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:text="    Derecha"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textAlignment="center"/>
+
+    </LinearLayout>
+
+    <!--Boton continuar-->
+    <LinearLayout
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="70dp"
+        android:layout_gravity="center">
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_Continuar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Continuar"
+            android:text="Continuar"
+            app:cornerRadius="20dp"
+            />
+    </LinearLayout>
+
+    <!--Segundo Rectangulo Azul-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/purple_500"
+        android:orientation="vertical"
+        android:layout_marginTop="90dp">
+    </LinearLayout>
+</LinearLayout>
