@@ -5,5 +5,97 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity6">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/Primary"
+            >
+
+            <ImageButton
+                android:id="@+id/frame6Return"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:backgroundTint="#00FFFFFF"
+                android:src="@drawable/ic_return"
+                tools:ignore="SpeakableTextPresentCheck" />
+
+            <ImageView
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="55dp"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/header"
+                android:layout_marginEnd="55dp"
+                />
+
+            <ImageButton
+                android:id="@+id/frame6Limpiar"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:backgroundTint="#00FFFFFF"
+                android:src="@drawable/escoba"
+                tools:ignore="SpeakableTextPresentCheck" />
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="300dp"
+                android:layout_height="200dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="60dp"
+                android:layout_marginTop="220dp"
+                android:layout_marginEnd="60dp"
+                android:layout_marginBottom="250dp"
+                android:background="@color/Primary"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/nombre_de_la_practica"
+                    android:textColor="@color/white"
+                    android:textSize="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_gravity="center_horizontal"/>
+
+                <EditText
+                    android:id="@+id/nombrePractica"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="@color/white"
+                    android:layout_margin="30dp"
+                    android:textSize="30dp"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnGuardar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/guardar"
+                    android:textColor="@color/black"
+                    android:backgroundTint="@color/white"
+                    app:cornerRadius="20dp"
+                    android:layout_gravity="end"
+                    android:layout_marginEnd="30dp"/>
+
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
