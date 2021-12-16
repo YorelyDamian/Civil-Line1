@@ -70,8 +70,6 @@
                     android:background="@color/colorOperaciones"
                     android:textColor="@color/black"/>
             </LinearLayout>
-
-
         </ScrollView>
 
 
