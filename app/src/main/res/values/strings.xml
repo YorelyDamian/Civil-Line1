@@ -4,4 +4,8 @@
     <string name="punto_de_interseccion">Punto de interseccion</string>
     <string name="velocidad_del_proyecto">Velocidad del proyecto</string>
     <string name="grado_de_la_curva">grado de la curva</string>
+    <string name="curva_horizontal_simple">Curva Horizontal Simple</string>
+    <string name="curva_en_espiral">Curva en Espiral</string>
+    <string name="total_de_la_curva">Total de la curva</string>
+    <string name="deflexi_n_a_cadenamiento">Deflexión a cadenamiento</string>
 </resources>
