@@ -1,9 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity7">
+    tools:context=".MainActivity7"
+    android:background="#fdfefe"
+    android:orientation="vertical"
+    android:layout_gravity="center">
+    <!--Primer Rectangulo Azul-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/Primary"
+        android:orientation="vertical">
+    </LinearLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <!--Contenedor de titulo e imagen-->
+    <LinearLayout
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:layout_marginTop="150dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Historial"
+            android:textAlignment="center"
+            android:textColor="#34495e"
+            android:textSize="35sp"/>
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_Horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="horizontal"
+            android:text="Curva Horizontal Simple"
+            app:cornerRadius="20dp"
+            android:layout_marginTop="70dp"
+            />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_Espiral"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="espiral"
+            android:text="Curva en Espiral"
+            app:cornerRadius="20dp"
+            android:layout_marginTop="50dp"
+            />
+
+    </LinearLayout>
+</LinearLayout>
