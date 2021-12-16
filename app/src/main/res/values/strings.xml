@@ -9,4 +9,6 @@
     <string name="total_de_la_curva">Total de la curva</string>
     <string name="deflexi_n_a_cadenamiento">Deflexión a cadenamiento</string>
     <string name="operaciones">Operaciones</string>
+    <string name="nombre_de_la_practica">Nombre de la practica</string>
+    <string name="guardar">Guardar</string>
 </resources>
