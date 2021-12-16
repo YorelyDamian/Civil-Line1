@@ -3,7 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="..\:/Users/lucio/AndroidStudioProjects/Civil-Line1/app/src/main/res/drawable/ic_history.xml" value="0.240625" />
+        <entry key="..\:/Users/lucio/AndroidStudioProjects/Civil-Line1/app/src/main/res/drawable/ic_return.xml" value="0.12604166666666666" />
+        <entry key="..\:/Users/lucio/AndroidStudioProjects/Civil-Line1/app/src/main/res/layout/activity_main3.xml" value="0.25" />
+        <entry key="..\:/Users/lucio/AndroidStudioProjects/Civil-Line1/app/src/main/res/menu/app_bar_top.xml" value="0.22447916666666667" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.16259057971014493" />
       </map>
     </option>
   </component>
