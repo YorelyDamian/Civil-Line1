@@ -13,8 +13,32 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:background="@color/Primary"
-        android:orientation="vertical">
+        android:background="@color/Primary">
+
+        <ImageButton
+            android:id="@+id/frame6Return"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:backgroundTint="#00FFFFFF"
+            android:src="@drawable/ic_return"
+            tools:ignore="SpeakableTextPresentCheck"/>
+
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginStart="55dp"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/header"
+            android:layout_marginEnd="55dp"/>
+
+        <ImageButton
+            android:id="@+id/frame6Limpiar"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:backgroundTint="#00FFFFFF"
+            android:src="@drawable/ic_history"
+            tools:ignore="SpeakableTextPresentCheck" />
     </LinearLayout>
 
     <!--Contenedor de RadioButton-->
