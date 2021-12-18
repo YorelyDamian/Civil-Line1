@@ -75,10 +75,11 @@
                 <EditText
                     android:id="@+id/nombrePractica"
                     android:layout_width="match_parent"
-                    android:layout_height="40dp"
-                    android:background="@color/white"
+                    android:layout_height="48dp"
                     android:layout_margin="30dp"
-                    android:textSize="30dp"/>
+                    android:background="@color/white"
+                    android:textSize="30dp"
+                    tools:ignore="SpeakableTextPresentCheck" />
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btnGuardar"
