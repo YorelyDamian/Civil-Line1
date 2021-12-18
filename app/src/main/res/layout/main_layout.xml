@@ -97,6 +97,7 @@
         android:layout_gravity="center">
 
         <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/switchDirection"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:checked="true"

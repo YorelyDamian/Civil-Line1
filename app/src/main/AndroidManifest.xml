@@ -28,10 +28,10 @@
             android:name=".MainActivity5"
             android:exported="true" />
         <activity
-            android:name=".MainActivity4"
+            android:name=".SpiralValues"
             android:exported="true" />
         <activity
-            android:name=".MainActivity3"
+            android:name=".HorizontalValues"
             android:exported="true" />
         <activity
             android:name=".MainActivity"

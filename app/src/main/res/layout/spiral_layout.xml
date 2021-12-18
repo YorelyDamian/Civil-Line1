@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity4">
+    tools:context=".SpiralValues">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -184,11 +184,14 @@
                     />
             </com.google.android.material.textfield.TextInputLayout>
 
-            <fragment
+            <LinearLayout
                 android:id="@+id/VistaGraficaEspiral"
                 android:layout_width="300dp"
                 android:layout_height="300dp"
-                android:layout_gravity="center_horizontal"/>
+                android:layout_gravity="center_horizontal"
+                android:orientation="vertical">
+
+            </LinearLayout>
 
 
             <com.google.android.material.button.MaterialButton
