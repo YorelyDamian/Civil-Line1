@@ -34,11 +34,11 @@
             />
 
         <ImageButton
-            android:id="@+id/frame9Limpiar"
+            android:id="@+id/frame9bote"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:backgroundTint="#00FFFFFF"
-            android:src="@drawable/escoba"
+            android:src="@drawable/ic_trash"
             tools:ignore="SpeakableTextPresentCheck" />
 
     </LinearLayout>

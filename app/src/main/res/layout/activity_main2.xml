@@ -16,11 +16,11 @@
         android:background="@color/Primary">
 
         <ImageButton
-            android:id="@+id/frame6Return"
+            android:id="@+id/frame2close"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:backgroundTint="#00FFFFFF"
-            android:src="@drawable/ic_return"
+            android:src="@drawable/ic_close"
             tools:ignore="SpeakableTextPresentCheck"/>
 
         <ImageView
@@ -33,7 +33,7 @@
             android:layout_marginEnd="55dp"/>
 
         <ImageButton
-            android:id="@+id/frame6Limpiar"
+            android:id="@+id/frame2historial"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:backgroundTint="#00FFFFFF"
