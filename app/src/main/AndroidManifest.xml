@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CivilLine1">
         <activity
+            android:name=".SplashActivity"
+            android:theme="@style/SplashTheme" />
+        <activity
             android:name=".MainActivity9"
             android:exported="true" />
         <activity
@@ -29,9 +32,6 @@
             android:exported="true" />
         <activity
             android:name=".MainActivity3"
-            android:exported="true" />
-        <activity
-            android:name=".MainActivity2"
             android:exported="true" />
         <activity
             android:name=".MainActivity"
