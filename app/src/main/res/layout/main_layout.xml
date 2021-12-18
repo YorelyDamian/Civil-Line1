@@ -16,7 +16,7 @@
         android:background="@color/Primary">
 
         <ImageButton
-            android:id="@+id/frame2close"
+            android:id="@+id/main_close"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:backgroundTint="#00FFFFFF"
@@ -33,7 +33,7 @@
             android:layout_marginEnd="55dp"/>
 
         <ImageButton
-            android:id="@+id/frame2historial"
+            android:id="@+id/main_history"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:backgroundTint="#00FFFFFF"
