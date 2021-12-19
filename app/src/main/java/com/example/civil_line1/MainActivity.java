@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        setTheme(R.style.Theme_CivilLine1);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_layout);
 
