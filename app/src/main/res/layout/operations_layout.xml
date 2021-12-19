@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity5">
+    tools:context=".view.OperationsActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -19,7 +19,7 @@
             >
 
             <ImageButton
-                android:id="@+id/frame5Return"
+                android:id="@+id/OperationsReturn"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:backgroundTint="#00FFFFFF"

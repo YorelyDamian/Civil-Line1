@@ -1,4 +1,4 @@
-package com.example.civil_line1;
+package com.example.civil_line1.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,8 +8,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.RadioButton;
-import android.widget.Switch;
 
+import com.example.civil_line1.R;
 import com.google.android.material.switchmaterial.SwitchMaterial;
 
 public class MainActivity extends AppCompatActivity {
@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
         btnHistory.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                createIntent(History.class);
+                createIntent(MenuHistory.class);
             }
         });
         btnContinue.setOnClickListener(new View.OnClickListener() {

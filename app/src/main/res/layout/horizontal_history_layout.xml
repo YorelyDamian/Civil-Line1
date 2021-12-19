@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity7"
+    tools:context=".view.HorizontalHistory"
     android:background="#fdfefe"
     android:orientation="vertical"
     android:layout_gravity="center">
@@ -16,12 +16,12 @@
         android:background="@color/Primary">
 
         <ImageButton
-            android:id="@+id/frame7Return"
+            android:id="@+id/HorizontalHistoryReturn"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:backgroundTint="#00FFFFFF"
             android:src="@drawable/ic_return"
-            tools:ignore="SpeakableTextPresentCheck"/>
+            tools:ignore="SpeakableTextPresentCheck" />
 
         <ImageView
             android:layout_width="200dp"
@@ -30,43 +30,41 @@
             android:layout_marginStart="55dp"
             android:layout_marginTop="20dp"
             android:src="@drawable/header"
-            android:layout_marginEnd="55dp"/>
+            android:layout_marginEnd="55dp"
+            />
+
+        <ImageButton
+            android:id="@+id/HorizontalHistorybote"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:backgroundTint="#00FFFFFF"
+            android:src="@drawable/ic_trash"
+            tools:ignore="SpeakableTextPresentCheck" />
 
     </LinearLayout>
 
-    <!--Contenedor de titulo e imagen-->
+    <!--Contenedor de Titulo-->
     <LinearLayout
-        android:layout_width="250dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:orientation="vertical"
-        android:layout_marginTop="150dp">
-
+        android:layout_marginTop="80dp">
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="Historial"
-            android:textAlignment="center"
+            android:text="Curva Horizontal Simple  --------------------------------"
             android:textColor="#34495e"
-            android:textSize="35sp"/>
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_Horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="horizontal"
-            android:text="Curva Horizontal Simple"
-            app:cornerRadius="20dp"
-            android:layout_marginTop="70dp"
-            />
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_Espiral"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="espiral"
-            android:text="Curva en Espiral"
-            app:cornerRadius="20dp"
-            android:layout_marginTop="50dp"
-            />
+            android:textSize="20sp"/>
+    </LinearLayout>
 
+    <!--Contenedor de registros-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="30dp">
+
+        <ListView
+            android:id="@+id/lv_datosHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
     </LinearLayout>
 </LinearLayout>

@@ -10,28 +10,28 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CivilLine1">
         <activity
-            android:name=".History"
+            android:name=".view.SpiralHistory"
             android:exported="true" />
         <activity
-            android:name=".MainActivity8"
+            android:name=".view.HorizontalHistory"
             android:exported="true" />
         <activity
-            android:name=".MainActivity7"
+            android:name=".view.MenuHistory"
             android:exported="true" />
         <activity
-            android:name=".MainActivity6"
+            android:name=".view.SaveActivity"
             android:exported="true" />
         <activity
-            android:name=".MainActivity5"
+            android:name=".view.OperationsActivity"
             android:exported="true" />
         <activity
-            android:name=".SpiralValues"
+            android:name=".view.SpiralValues"
             android:exported="true" />
         <activity
-            android:name=".HorizontalValues"
+            android:name=".view.HorizontalValues"
             android:exported="true" />
         <activity
-            android:name=".MainActivity"
+            android:name=".view.MainActivity"
             android:exported="true"
             android:theme="@style/SplashTheme">
             <intent-filter>

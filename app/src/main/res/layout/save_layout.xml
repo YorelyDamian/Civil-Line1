@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity6">
+    tools:context=".view.SaveActivity">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -16,7 +16,7 @@
             android:background="@color/Primary">
 
             <ImageButton
-                android:id="@+id/frame6Return"
+                android:id="@+id/SaveReturn"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:backgroundTint="#00FFFFFF"
@@ -33,7 +33,7 @@
                 android:layout_marginEnd="55dp"/>
 
             <ImageButton
-                android:id="@+id/frame6Limpiar"
+                android:id="@+id/SaveLimpiar"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:backgroundTint="#00FFFFFF"

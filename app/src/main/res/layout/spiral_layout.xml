@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SpiralValues">
+    tools:context=".view.SpiralValues">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -18,7 +18,7 @@
             >
 
             <ImageButton
-                android:id="@+id/frame4Return"
+                android:id="@+id/SpiralReturn"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:backgroundTint="#00FFFFFF"
@@ -36,7 +36,7 @@
                 />
 
             <ImageButton
-                android:id="@+id/frame4Save"
+                android:id="@+id/SpiralSave"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:backgroundTint="#00FFFFFF"
@@ -44,7 +44,7 @@
                 tools:ignore="SpeakableTextPresentCheck" />
 
             <ImageButton
-                android:id="@+id/frame4Clear"
+                android:id="@+id/SpiralClear"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:backgroundTint="#00FFFFFF"

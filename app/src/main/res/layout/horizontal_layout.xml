@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HorizontalValues">
+    tools:context=".view.HorizontalValues">
 
 
    <LinearLayout
@@ -19,7 +19,7 @@
            >
 
            <ImageButton
-               android:id="@+id/frame3Return"
+               android:id="@+id/HorizontalReturn"
                android:layout_width="50dp"
                android:layout_height="50dp"
                android:backgroundTint="#00FFFFFF"
@@ -37,7 +37,7 @@
                />
 
            <ImageButton
-               android:id="@+id/frame3Save"
+               android:id="@+id/HorizontalSave"
                android:layout_width="50dp"
                android:layout_height="50dp"
                android:backgroundTint="#00FFFFFF"
@@ -45,7 +45,7 @@
                tools:ignore="SpeakableTextPresentCheck" />
 
            <ImageButton
-               android:id="@+id/frame3Clear"
+               android:id="@+id/HorizontalClear"
                android:layout_width="50dp"
                android:layout_height="50dp"
                android:backgroundTint="#00FFFFFF"
