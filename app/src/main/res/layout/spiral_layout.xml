@@ -202,15 +202,8 @@
                 android:text="Operaciones"
                 android:layout_gravity="center_horizontal"
                 app:cornerRadius="20dp"/>
-
-
-
         </LinearLayout>
-
-
     </ScrollView>
-
-
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
