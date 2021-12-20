@@ -3,28 +3,23 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/lucio/AndroidStudioProjects/Civil-Line1/app/src/main/res/drawable/background_splash.xml" value="0.23692307692307693" />
-        <entry key="..\:/Users/lucio/AndroidStudioProjects/Civil-Line1/app/src/main/res/drawable/ic_history.xml" value="0.240625" />
-        <entry key="..\:/Users/lucio/AndroidStudioProjects/Civil-Line1/app/src/main/res/drawable/ic_return.xml" value="0.12604166666666666" />
-        <entry key="..\:/Users/lucio/AndroidStudioProjects/Civil-Line1/app/src/main/res/drawable/splash_screen.xml" value="0.240625" />
-        <entry key="..\:/Users/lucio/AndroidStudioProjects/Civil-Line1/app/src/main/res/layout/activity_main.xml" value="0.22447916666666667" />
-        <entry key="..\:/Users/lucio/AndroidStudioProjects/Civil-Line1/app/src/main/res/layout/activity_main2.xml" value="0.33" />
-        <entry key="..\:/Users/lucio/AndroidStudioProjects/Civil-Line1/app/src/main/res/layout/activity_main3.xml" value="0.25" />
-        <entry key="..\:/Users/lucio/AndroidStudioProjects/Civil-Line1/app/src/main/res/layout/activity_main4.xml" value="0.22083333333333333" />
-        <entry key="..\:/Users/lucio/AndroidStudioProjects/Civil-Line1/app/src/main/res/layout/activity_main5.xml" value="0.22083333333333333" />
-        <entry key="..\:/Users/lucio/AndroidStudioProjects/Civil-Line1/app/src/main/res/layout/activity_main6.xml" value="0.22447916666666667" />
-        <entry key="..\:/Users/lucio/AndroidStudioProjects/Civil-Line1/app/src/main/res/layout/activity_main7.xml" value="0.22447916666666667" />
-        <entry key="..\:/Users/lucio/AndroidStudioProjects/Civil-Line1/app/src/main/res/layout/activity_main8.xml" value="0.22447916666666667" />
-        <entry key="..\:/Users/lucio/AndroidStudioProjects/Civil-Line1/app/src/main/res/layout/activity_main9.xml" value="0.22447916666666667" />
-        <entry key="..\:/Users/lucio/AndroidStudioProjects/Civil-Line1/app/src/main/res/layout/history_layout.xml" value="0.22447916666666667" />
-        <entry key="..\:/Users/lucio/AndroidStudioProjects/Civil-Line1/app/src/main/res/layout/horizontal_layout.xml" value="0.10989583333333333" />
-        <entry key="..\:/Users/lucio/AndroidStudioProjects/Civil-Line1/app/src/main/res/layout/main_layout.xml" value="0.22447916666666667" />
-        <entry key="..\:/Users/lucio/AndroidStudioProjects/Civil-Line1/app/src/main/res/layout/operations_layout.xml" value="0.22447916666666667" />
-        <entry key="..\:/Users/lucio/AndroidStudioProjects/Civil-Line1/app/src/main/res/layout/save_layout.xml" value="0.22447916666666667" />
-        <entry key="..\:/Users/lucio/AndroidStudioProjects/Civil-Line1/app/src/main/res/layout/spiral_layout.xml" value="0.10989583333333333" />
-        <entry key="..\:/Users/lucio/AndroidStudioProjects/Civil-Line1/app/src/main/res/menu/app_bar_top.xml" value="0.22447916666666667" />
-        <entry key="..\:/Users/lucio/AndroidStudioProjects/Civil-Line1/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.12604166666666666" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.16259057971014493" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="app/src/main/res/layout/activity_main2.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/activity_main3.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/activity_main4.xml" value="0.19" />
+        <entry key="app/src/main/res/layout/activity_main5.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/activity_main6.xml" value="0.21" />
+        <entry key="app/src/main/res/layout/activity_main7.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/activity_main8.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/activity_main9.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/horizontal_history_layout.xml" value="0.16394927536231885" />
+        <entry key="app/src/main/res/layout/horizontal_layout.xml" value="0.16394927536231885" />
+        <entry key="app/src/main/res/layout/main_layout.xml" value="0.16394927536231885" />
+        <entry key="app/src/main/res/layout/menu_history_layout.xml" value="0.16394927536231885" />
+        <entry key="app/src/main/res/layout/operations_layout.xml" value="0.16394927536231885" />
+        <entry key="app/src/main/res/layout/save_layout.xml" value="0.16394927536231885" />
+        <entry key="app/src/main/res/layout/spiral_history_layout.xml" value="0.16394927536231885" />
+        <entry key="app/src/main/res/layout/spiral_layout.xml" value="0.16394927536231885" />
       </map>
     </option>
   </component>

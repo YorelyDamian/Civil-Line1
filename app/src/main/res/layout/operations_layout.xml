@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="#fdfefe"
     android:layout_height="match_parent"
     tools:context=".view.OperationsActivity">
 
@@ -37,7 +38,7 @@
                 />
 
             <ImageButton
-                android:id="@+id/frame5Agregar"
+                android:id="@+id/agregarOperacion"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:backgroundTint="#00FFFFFF"
