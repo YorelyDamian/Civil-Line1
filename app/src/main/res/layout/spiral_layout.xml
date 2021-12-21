@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#fdfefe"
     tools:context=".view.SpiralValues">
 
     <LinearLayout
@@ -201,15 +202,8 @@
                 android:text="Operaciones"
                 android:layout_gravity="center_horizontal"
                 app:cornerRadius="20dp"/>
-
-
-
         </LinearLayout>
-
-
     </ScrollView>
-
-
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
