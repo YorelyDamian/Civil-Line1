@@ -4,7 +4,7 @@
     <item>
         <bitmap
             android:gravity="center"
-            android:src="@drawable/imagen_principal"
+            android:src="@drawable/logoprincipal"
             />
     </item>
 
