@@ -9,14 +9,14 @@ import android.widget.ImageButton;
 import com.example.civil_line1.R;
 
 public class SaveActivity extends AppCompatActivity {
-    private ImageButton btnReturn;
+    private ImageButton btnRegresar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.save_layout);
         initComponents();
 
-        btnReturn.setOnClickListener(new View.OnClickListener() {
+        btnRegresar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 SaveActivity.super.onBackPressed();
@@ -25,6 +25,6 @@ public class SaveActivity extends AppCompatActivity {
     }
 
     private void initComponents(){
-        btnReturn = (ImageButton) findViewById(R.id.SaveReturn);
+        btnRegresar = (ImageButton) findViewById(R.id.SaveReturn);
     }
 }
