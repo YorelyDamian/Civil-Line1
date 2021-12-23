@@ -9,14 +9,14 @@ import android.widget.ImageButton;
 import com.example.civil_line1.R;
 
 public class HorizontalHistory extends AppCompatActivity {
-    private ImageButton btnReturn;
+    private ImageButton btnRetur;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.horizontal_history_layout);
         initComponents();
 
-        btnReturn.setOnClickListener(new View.OnClickListener() {
+        btnRetur.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 HorizontalHistory.super.onBackPressed();
@@ -25,6 +25,6 @@ public class HorizontalHistory extends AppCompatActivity {
     }
 
     private void initComponents(){
-        btnReturn = (ImageButton) findViewById(R.id.HorizontalHistoryReturn);
+        btnRetur = (ImageButton) findViewById(R.id.HorizontalHistoryReturn);
     }
 }
