@@ -3,6 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/lucio/AndroidStudioProjects/Civil-Line1/app/src/main/res/layout/horizontal_layout.xml" value="0.22447916666666667" />
+        <entry key="..\:/Users/lucio/AndroidStudioProjects/Civil-Line1/app/src/main/res/layout/operations_layout.xml" value="0.22447916666666667" />
+        <entry key="..\:/Users/lucio/AndroidStudioProjects/Civil-Line1/app/src/main/res/layout/spiral_layout.xml" value="0.17" />
         <entry key="app/src/main/res/drawable/splash_screen.xml" value="0.209375" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="app/src/main/res/layout/activity_main2.xml" value="0.22" />

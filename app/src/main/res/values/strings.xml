@@ -11,4 +11,5 @@
     <string name="operaciones">Operaciones</string>
     <string name="nombre_de_la_practica">Nombre de la practica</string>
     <string name="guardar">Guardar</string>
+    <string name="calcular">Calcular</string>
 </resources>
