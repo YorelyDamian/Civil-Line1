@@ -120,6 +120,7 @@ public class Espiral {
         /*2 Operaciones Parametro de la espiral (e)*/
         k=Math.sqrt(rc*le);
         /*3 Operaciones Deflexion de la espiral(0e)*/
+        oe=(90/3.1416)*(le/rc);/*Falta sacar los grados minutos y segundos*/
 
         /*4 Operaciones Deflexion de la curva circular (Ac)*/
 
