@@ -3,10 +3,10 @@ package model;
 public class Espiral {
 
     /*Variables para los datos de entrada*/
-    public int angTan; /*Total de la curva*/
-    public int pi; /*Cadenamiento*/
+    public String angTan; /*Total de la curva*/
+    public double pi; /*Cadenamiento*/
     public int vp; /*Velocidad de Proyecto*/
-    public int gc; /*Grado de curvatura*/
+    public String gc; /*Grado de curvatura*/
     public int le; /*Longitud de la curvatura espiral*/
     public int dc; /*Deflexion de cadenamiento*/
     /*Variables para las operaciones*/
@@ -34,17 +34,17 @@ public class Espiral {
 
     /*Creacion de get y set de los datos de entrada*/
     /*get y set de AngTan*/
-    public int getAngTan() { return angTan; }
-    public void setAngTan(int angTan) { this.angTan = angTan; }
+    public String getAngTan() { return angTan; }
+    public void setAngTan(String angTan) { this.angTan = angTan; }
     /*get y set de pi*/
-    public int getPi() { return pi; }
-    public void setPi(int pi) { this.pi = pi; }
+    public double getPi() { return pi; }
+    public void setPi(double pi) { this.pi = pi; }
     /*get y set de Vp*/
     public int getVp() { return vp; }
     public void setVp(int vp) { this.vp = vp; }
     /*get y set de gc*/
-    public int getGc() { return gc; }
-    public void setGc(int gc) { this.gc = gc; }
+    public String getGc() { return gc; }
+    public void setGc(String gc) { this.gc = gc; }
     /*get y set de le*/
     public int getLe() { return le; }
     public void setLe(int le) { this.le = le; }
@@ -116,20 +116,23 @@ public class Espiral {
     public String operaciones(){
         String resultado = "";
         /*1 Operaciones Radio de curvatura (Rc)*/
-        rc=(1146/gc);
+        /*rc=(1146/gc);*/
         /*2 Operaciones Parametro de la espiral (e)*/
         k=Math.sqrt(rc*le);
         /*3 Operaciones Deflexion de la espiral(0e)*/
         oe=(90/3.1416)*(le/rc);/*Falta sacar los grados minutos y segundos*/
 
         /*4 Operaciones Deflexion de la curva circular (Ac)*/
+        /*ac=(angTan-(2*oe)); Falta sacar los grados minutos y segundos*/
 
         /*5 Operaciones Coordenada de Gc de la curva en x (xc)*/
+        yc=(le/100)*(100-0.00305)*(Math.pow(oe,2));
 
         /*6 Operaciones Coordenada de Gc de la curva en y (yc)*/
+        xc=(le/100)*(0.582*oe)-0.0000126*(Math.pow(oe,3));
 
         /*7 Operaciones Coordenadas del Pc de la curva (P)*/
-
+        /*p=yc-(rc(1-Math.cos(oe)));*/
         /*Aqui empieza Eder*/
         /*8 Operaciones Coordenadas del Pc de la curva (K)*/
 
