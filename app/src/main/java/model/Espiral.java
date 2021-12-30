@@ -6,7 +6,7 @@ public class Espiral {
     public String angTan; /*Total de la curva*/
     public double pi; /*Cadenamiento*/
     public int vp; /*Velocidad de Proyecto*/
-    public String gc; /*Grado de curvatura*/
+     public String gc; /*Grado de curvatura*/
     public int le; /*Longitud de la curvatura espiral*/
     public int dc; /*Deflexion de cadenamiento*/
     /*Variables para las operaciones*/
@@ -25,6 +25,8 @@ public class Espiral {
     public double cle; /*Cuerda Larga*/
     public double oc; /*Deflexion para ec*/
     public double lc; /*Longitud de la curva circular*/
+
+
 
     /*Calculo de progresivas o cadenamiento*/
     public double pte; /*Progresiva de Te*/
@@ -142,10 +144,10 @@ public class Espiral {
         ac=(decimalAT-(2*oe)); //Resultado
 
         /*5 Operaciones Coordenada de Gc de la curva en x (xc)*/
-        yc=(le/100)*(100-0.00305)*(Math.pow(oe,2));
+        xc=(le/100)*(100-0.00305)*(Math.pow(oe,2));
 
         /*6 Operaciones Coordenada de Gc de la curva en y (yc)*/
-        xc=(le/100)*(0.582*oe)-0.0000126*(Math.pow(oe,3));
+        yc=(le/100)*(0.582*oe)-0.0000126*(Math.pow(oe,3));
 
         /*7 Operaciones Coordenadas del Pc de la curva (P)*/
         double a=Math.toRadians(oe);//primero cambiar a radianes
@@ -154,21 +156,24 @@ public class Espiral {
 
         /*Aqui empieza Eder*/
         /*8 Operaciones Coordenadas del Pc de la curva (K)*/
+        double b1=Math.sin(a);
+         k=(xc)-(rc*(b1));
 
         /*9 Operaciones Tangente de la espiral (ste)*/
-
+         te=(k)+(rc+p)*Math.tan(decimalAT/2);
         /*10 Operaciones Externa de la curva espiral (ec)*/
-
+         ec=(rc+p)*Math.sin(decimalAT/2)-(rc);
         /*11 Operaciones Tagente larga (tl)*/
-
+           tl=xc - yc/Math.tan(oc);
         /*12 Operaciones Tangente corta (tc)*/
-
+        tc=xc - yc/Math.sin(oc);
         /*13 Operaciones Cuerda larga (Cle)*/
-
+         cle=Math.sqrt(xc+yc);
         /*14 Operaciones Deflexion para Gc (pe)*/
+           pec=Math.tan(yc/xc);
 
         /*15 Operaciones longitud de la curva circular (lc)*/
-
+         lc=(20*ac)/decimalGC;
         /*Calculo de progresivas o cadenamiento*/
         /*1 Operaciones Progresiva de (te)*/
 
