@@ -9,6 +9,7 @@ public class Espiral {
      public String gc; /*Grado de curvatura*/
     public int le; /*Longitud de la curvatura espiral*/
     public int dc; /*Deflexion de cadenamiento*/
+
     /*Variables para las operaciones*/
     public double rc; /*Radio de la curva circular*/
     public double k; /*Parametro de la espiral*/
@@ -25,8 +26,6 @@ public class Espiral {
     public double cle; /*Cuerda Larga*/
     public double oc; /*Deflexion para ec*/
     public double lc; /*Longitud de la curva circular*/
-
-
 
     /*Calculo de progresivas o cadenamiento*/
     public double pte; /*Progresiva de Te*/
@@ -114,6 +113,7 @@ public class Espiral {
     /*get y set de pet*/
     public double getPet() { return pet; }
     public void setPet(double pet) { this.pet = pet; }
+
     public String operaciones(){
         String resultado = "";
 
@@ -154,34 +154,40 @@ public class Espiral {
         double b=Math.cos(a);//segundo sacar el resultado a coseno
         p=yc-(rc*(1-b));//resultado de p
 
-        /*Aqui empieza Eder*/
         /*8 Operaciones Coordenadas del Pc de la curva (K)*/
         double b1=Math.sin(a);
          k=(xc)-(rc*(b1));
 
         /*9 Operaciones Tangente de la espiral (ste)*/
          te=(k)+(rc+p)*Math.tan(decimalAT/2);
+
         /*10 Operaciones Externa de la curva espiral (ec)*/
          ec=(rc+p)*Math.sin(decimalAT/2)-(rc);
+
         /*11 Operaciones Tagente larga (tl)*/
            tl=xc - yc/Math.tan(oc);
+
         /*12 Operaciones Tangente corta (tc)*/
         tc=xc - yc/Math.sin(oc);
+
         /*13 Operaciones Cuerda larga (Cle)*/
-         cle=Math.sqrt(xc+yc);
+         cle=Math.sqrt(Math.pow(xc,2)+Math.pow(yc,2));
+
         /*14 Operaciones Deflexion para Gc (pe)*/
            pec=Math.tan(yc/xc);
 
         /*15 Operaciones longitud de la curva circular (lc)*/
          lc=(20*ac)/decimalGC;
+
         /*Calculo de progresivas o cadenamiento*/
         /*1 Operaciones Progresiva de (te)*/
-
+        pte=(pi-te);
         /*2 Operaciones Progresiva  (ce)*/
-
+        pec=(te+le);
         /*3 Operaciones ce*/
-
+        pce=(pec+lc);
         /*4 Operaciones et*/
+        pet=(pce+le);
 
         return resultado;
     }
