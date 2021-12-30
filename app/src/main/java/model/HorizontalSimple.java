@@ -2,10 +2,12 @@ package model;
 
 public class HorizontalSimple {
     /*Creacion de variables para los datos de entrada*/
-    private Double anguloTan;
-    private Double puntoInter;
-    private Double velocProy;
-    private Double gradoCurva;
+    private double anguloTan;
+    private double puntoInter;
+    private double velocProy;
+    private double gradoCurva;
+
+    private double RC;
 
     /*GET de Angulo de las tangentes*/
     public Double getAnguloTan() { return anguloTan; }
@@ -30,4 +32,12 @@ public class HorizontalSimple {
 
     /*SET de Grado de Curvatura*/
     public void setGradoCurva(Double gradoCurva) { this.gradoCurva = gradoCurva; }
+
+    public String calcularCurva(){
+        String operaciones = "";
+
+
+
+        return operaciones;
+    }
 }

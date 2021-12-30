@@ -120,6 +120,13 @@ public class Espiral {
         /*2 Operaciones Parametro de la espiral (e)*/
         k=Math.sqrt(rc*le);
         /*3 Operaciones Deflexion de la espiral(0e)*/
+        oe = (90/Math.PI)*(le/rc);
+        //genera el valor en decimal
+        //convertirlo en G M S
+        //Usamos un objeto de la clase Grados
+        Grados obj = new Grados();
+        //llamamos el metodo de conversion
+        String gradosOE = obj.convertirASeg(oe);
 
         /*4 Operaciones Deflexion de la curva circular (Ac)*/
 
