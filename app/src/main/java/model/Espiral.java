@@ -133,6 +133,7 @@ public class Espiral {
 
         /*7 Operaciones Coordenadas del Pc de la curva (P)*/
         /*p=yc-(rc(1-Math.cos(oe)));*/
+
         /*Aqui empieza Eder*/
         /*8 Operaciones Coordenadas del Pc de la curva (K)*/
 
