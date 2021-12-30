@@ -9,7 +9,6 @@ public class Espiral {
     public String gc; /*Grado de curvatura*/
     public int le; /*Longitud de la curvatura espiral*/
     public int dc; /*Deflexion de cadenamiento*/
-
     /*Variables para las operaciones*/
     public double rc; /*Radio de la curva circular*/
     public double k; /*Parametro de la espiral*/
@@ -113,7 +112,6 @@ public class Espiral {
     /*get y set de pet*/
     public double getPet() { return pet; }
     public void setPet(double pet) { this.pet = pet; }
-
     public String operaciones(){
         String resultado = "";
         /*1 Operaciones Radio de curvatura (Rc)*/
@@ -121,7 +119,13 @@ public class Espiral {
         /*2 Operaciones Parametro de la espiral (e)*/
         k=Math.sqrt(rc*le);
         /*3 Operaciones Deflexion de la espiral(0e)*/
-        oe=(90/3.1416)*(le/rc);/*Falta sacar los grados minutos y segundos*/
+        oe = (90/Math.PI)*(le/rc);
+        //genera el valor en decimal
+        //convertirlo en G M S
+        //Usamos un objeto de la clase Grados
+        Grados obj = new Grados();
+        //llamamos el metodo de conversion
+        String gradosOE = obj.convertirASeg(oe);
 
         /*4 Operaciones Deflexion de la curva circular (Ac)*/
         /*ac=(angTan-(2*oe)); Falta sacar los grados minutos y segundos*/
