@@ -114,21 +114,34 @@ public class Espiral {
     public void setPet(double pet) { this.pet = pet; }
     public String operaciones(){
         String resultado = "";
+
         /*1 Operaciones Radio de curvatura (Rc)*/
-        /*rc=(1146/gc);*/
+        //convertirlo a decimal gc
+        //Usamos un objeto de la clase grados
+        Grados obj1 = new Grados();
+        //Llamamos al metodo de la conversion a decimal
+        double decimalGC = obj1.convertirADecimales(gc);
+        rc=(1146/decimalGC);// obtenemos rc en decimal
+
         /*2 Operaciones Parametro de la espiral (e)*/
         k=Math.sqrt(rc*le);
+
         /*3 Operaciones Deflexion de la espiral(0e)*/
-        oe = (90/Math.PI)*(le/rc);
+        oe = (90/Math.PI)*(le/rc); // resultado de oe en decimal
         //genera el valor en decimal
         //convertirlo en G M S
         //Usamos un objeto de la clase Grados
-        Grados obj = new Grados();
+        Grados obj2 = new Grados();
         //llamamos el metodo de conversion
-        String gradosOE = obj.convertirASeg(oe);
+        String gradosOE = obj2.convertirASeg(oe);//Saca Grados minutos y segundos
 
         /*4 Operaciones Deflexion de la curva circular (Ac)*/
-        /*ac=(angTan-(2*oe)); Falta sacar los grados minutos y segundos*/
+        //convertirlo a decimal angTan
+        //Usamos un objeto de la clase grados
+        Grados obj4 = new Grados();
+        //Llamamos al metodo de la conversion a decimal
+        double decimalAT = obj4.convertirADecimales(angTan);
+        ac=(decimalAT-(2*oe)); //Resultado
 
         /*5 Operaciones Coordenada de Gc de la curva en x (xc)*/
         yc=(le/100)*(100-0.00305)*(Math.pow(oe,2));
@@ -137,7 +150,9 @@ public class Espiral {
         xc=(le/100)*(0.582*oe)-0.0000126*(Math.pow(oe,3));
 
         /*7 Operaciones Coordenadas del Pc de la curva (P)*/
-        /*p=yc-(rc(1-Math.cos(oe)));*/
+        double a=Math.toRadians(oe);//primero cambiar a radianes
+        double b=Math.cos(a);//segundo sacar el resultado a coseno
+        p=yc-(rc*(1-b));//resultado de p
 
         /*Aqui empieza Eder*/
         /*8 Operaciones Coordenadas del Pc de la curva (K)*/
