@@ -137,10 +137,8 @@ public class Espiral {
 
         /*4 Operaciones Deflexion de la curva circular (Ac)*/
         //convertirlo a decimal angTan
-        //Usamos un objeto de la clase grados
-        Grados obj4 = new Grados();
         //Llamamos al metodo de la conversion a decimal
-        double decimalAT = obj4.convertirADecimales(angTan);
+        double decimalAT = obj1.convertirADecimales(angTan);
         ac=(decimalAT-(2*oe)); //Resultado
 
         /*5 Operaciones Coordenada de Gc de la curva en x (xc)*/
