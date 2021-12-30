@@ -9,6 +9,7 @@ public class Espiral {
     public String gc; /*Grado de curvatura*/
     public int le; /*Longitud de la curvatura espiral*/
     public int dc; /*Deflexion de cadenamiento*/
+
     /*Variables para las operaciones*/
     public double rc; /*Radio de la curva circular*/
     public double k; /*Parametro de la espiral*/
