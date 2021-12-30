@@ -100,7 +100,7 @@ public class Espiral {
     public double getLc() { return lc; }
     public void setLc(double lc) { this.lc = lc; }
 
-    /*Creacion de get y set de calculo progresivo o cadenamiento*/
+    /*Creacion de get y set de calculo de cadenamiento*/
     /*get y set de pte*/
     public double getPte() { return pte; }
     public void setPte(double pte) { this.pte = pte; }
