@@ -120,7 +120,7 @@ public class Espiral {
         /*1 Operaciones Radio de curvatura (Rc)*/
         //convertirlo a decimal gc
         //Usamos un objeto de la clase grados
-        Grados obj1 = new Grados();
+        Operaciones obj1 = new Operaciones();
         //Llamamos al metodo de la conversion a decimal
         double decimalGC = obj1.convertirADecimales(gc);
         rc=(1146/decimalGC);// obtenemos rc en decimal
@@ -133,7 +133,7 @@ public class Espiral {
         //genera el valor en decimal
         //convertirlo en G M S
         //Usamos un objeto de la clase Grados
-        Grados obj2 = new Grados();
+        Operaciones obj2 = new Operaciones();
         //llamamos el metodo de conversion
         String gradosOE = obj2.convertirASeg(oe);//Saca Grados minutos y segundos
 

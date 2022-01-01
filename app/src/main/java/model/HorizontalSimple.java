@@ -55,7 +55,7 @@ public class HorizontalSimple {
 
     public String calcularCurva(){
         String operaciones = "";
-        Grados obj = new Grados();
+        Operaciones  obj = new Operaciones();
         RC = 1145.92/gradoCurva;
         anguloTan = obj.convertirADecimales(AT);
         ST = RC*Math.tan(anguloTan/2);
