@@ -180,14 +180,22 @@ public class Espiral {
          lc=(20*ac)/decimalGC;
 
         /*Calculo de progresivas o cadenamiento*/
+        Operaciones convertir= new Operaciones();
         /*1 Operaciones Progresiva de (te)*/
         pte=(pi-te);
+        String  pte1 = convertir.convertirCadenamiento(pte);
+
         /*2 Operaciones Progresiva  (ce)*/
         pec=(te+le);
+        String  pec1 = convertir.convertirCadenamiento(pec);
+
         /*3 Operaciones ce*/
         pce=(pec+lc);
+        String  pce1 = convertir.convertirCadenamiento(pce);
+
         /*4 Operaciones et*/
         pet=(pce+le);
+        String  pet1 = convertir.convertirCadenamiento(pet);
 
         return resultado;
     }
