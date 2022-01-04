@@ -71,7 +71,7 @@ public class SpiralValues extends AppCompatActivity {
                 }else{
                     btnOperations.setText("Calcular");
                     Intent ope = new Intent(SpiralValues.this,OperationsActivity.class);
-                    ope.putExtra("cadenaE","Espiral");
+                    ope.putExtra("cadena","Espiral");
                     startActivity(ope);
                 }
             }

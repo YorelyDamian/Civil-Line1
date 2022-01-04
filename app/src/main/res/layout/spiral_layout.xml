@@ -87,6 +87,7 @@
                     android:id="@+id/PIEspiral"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:inputType="numberDecimal"
                     android:hint="@string/punto_de_interseccion"
                     android:textColorHint="@color/colorHint"
                     />
@@ -125,6 +126,7 @@
                     android:id="@+id/VPEspiral"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:inputType="numberDecimal"
                     android:hint="@string/velocidad_del_proyecto"
                     android:textColorHint="@color/colorHint"
                     />
@@ -163,6 +165,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:hint="Longitud de la curva"
+                    android:inputType="numberDecimal"
                     android:textColorHint="@color/colorHint"
                     />
             </com.google.android.material.textfield.TextInputLayout>
@@ -180,6 +183,7 @@
                     android:id="@+id/DCEspiral"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:inputType="numberDecimal"
                     android:hint="@string/deflexi_n_a_cadenamiento"
                     android:textColorHint="@color/colorHint"
                     />

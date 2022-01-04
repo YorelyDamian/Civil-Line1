@@ -45,7 +45,6 @@ public class OperationsActivity extends AppCompatActivity {
         btnAgregar = (ImageButton) findViewById(R.id.agregarOperacion);
         salida = (TextView) findViewById(R.id.OutOperaciones);
         salida.setText(getIntent().getStringExtra("cadena"));
-        salida.setText(getIntent().getStringExtra("cadenaE"));
 
     }
 }
