@@ -65,7 +65,7 @@ public class SpiralValues extends AppCompatActivity {
                         //obj.setGc(GC.getText().toString());
                         //obj.setLe(Integer.parseInt(Le.getText().toString().trim()));
                         //obj.setDc(Integer.parseInt(DC.getText().toString().trim()));
-                        cadenaOperacionesEspiral = obj.operaciones();
+                        //cadenaOperacionesEspiral = obj.operaciones();
                         cadenaOperacionesEspiral = "Espiral";
                     }
                 }else{
