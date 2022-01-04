@@ -17,6 +17,8 @@ import com.example.civil_line1.R;
 
 import java.util.Locale;
 
+import model.HorizontalSimple;
+
 public class HorizontalValues extends AppCompatActivity {
     private ImageButton btnReturn;
     private ImageButton btnSave;
@@ -26,6 +28,7 @@ public class HorizontalValues extends AppCompatActivity {
     private EditText PI;
     private EditText VP;
     private EditText GC;
+    private String cadenaOperaciones;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,12 +59,19 @@ public class HorizontalValues extends AppCompatActivity {
                     if (estanLlenos()){
                         btnOperations.setText("Operaciones");
                         //Cargar evento de los datos
+                        HorizontalSimple obj = new HorizontalSimple();
+                        //obj.setAT(AngTan.getText().toString());
+                        //obj.setGradoCurva(Double.parseDouble(GC.getText().toString().trim()));
+                        //obj.setGradoCurva(Double.parseDouble(PI.getText().toString().trim()));
+                        //obj.setGradoCurva(Double.parseDouble(VP.getText().toString().trim()));
+                        //cadenaOperaciones = obj.calcularCurva();
+                        cadenaOperaciones = "Horizontal";
                     }
                 }else{
                     btnOperations.setText("Calcular");
-
-                    createIntent(OperationsActivity.class);
-
+                    Intent op = new Intent(HorizontalValues.this,OperationsActivity.class);
+                    op.putExtra("cadena", "Horizontal");
+                    startActivity(op);
                 }
             }
         });
@@ -75,34 +85,8 @@ public class HorizontalValues extends AppCompatActivity {
                 GC.setText(null);
             }
         });
-        cargarEvento(AngTan);
-        cargarEvento(PI);
-        cargarEvento(VP);
-        cargarEvento(GC);
     }
 
-    private void cargarEvento(EditText texto){
-        texto.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                    if (s.length()>0) {
-                        if (estanLlenos()) {
-                            //Cargar operaciones
-                        }
-                    }
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-
-            }
-        });
-    }
 
     private boolean estanLlenos(){
         if(AngTan.getText().toString().isEmpty() ||

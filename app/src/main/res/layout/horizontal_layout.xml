@@ -95,6 +95,7 @@
            >
            <com.google.android.material.textfield.TextInputEditText
                android:id="@+id/PISimple"
+               android:inputType="numberDecimal"
                android:layout_width="match_parent"
                android:layout_height="match_parent"
                android:hint="@string/punto_de_interseccion"
@@ -116,6 +117,7 @@
                android:id="@+id/VPSimple"
                android:layout_width="match_parent"
                android:layout_height="match_parent"
+               android:inputType="numberDecimal"
                android:hint="@string/velocidad_del_proyecto"
                android:textColorHint="@color/colorHint"
                />
