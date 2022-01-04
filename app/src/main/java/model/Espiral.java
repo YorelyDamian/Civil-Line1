@@ -156,7 +156,7 @@ public class Espiral {
 
         /*8 Operaciones Coordenadas del Pc de la curva (K)*/
         double b1=Math.sin(a);
-         k=(xc)-(rc*(b1));
+        pck=(xc)-(rc*(b1));
 
         /*9 Operaciones Tangente de la espiral (ste)*/
          te=(k)+(rc+p)*Math.tan(decimalAT/2);
@@ -165,7 +165,7 @@ public class Espiral {
          ec=(rc+p)*Math.sin(decimalAT/2)-(rc);
 
         /*11 Operaciones Tagente larga (tl)*/
-           tl=xc - yc/Math.tan(oc);
+        tl=xc - yc/Math.tan(oc);
 
         /*12 Operaciones Tangente corta (tc)*/
         tc=xc - yc/Math.sin(oc);
@@ -174,7 +174,7 @@ public class Espiral {
          cle=Math.sqrt(Math.pow(xc,2)+Math.pow(yc,2));
 
         /*14 Operaciones Deflexion para Gc (pe)*/
-           pec=Math.tan(yc/xc);
+        pec=Math.tan(yc/xc);
 
         /*15 Operaciones longitud de la curva circular (lc)*/
          lc=(20*ac)/decimalGC;
@@ -197,6 +197,25 @@ public class Espiral {
         pet=(pce+le);
         String  pet1 = convertir.convertirCadenamiento(pet);
 
-        return resultado;
+        return resultado = "1ª Radio de la curva circular: "+ decimalGC
+                            +"\n2ª Parametro de la espiral: " + k
+                            +"\n3ª Deflexion de la espiral: " + gradosOE
+                            +"\n4ª Deflexion de la curva circular: " + ac
+                            +"\n5ª Coordenada Ec de la curva en Xc: " + xc
+                            +"\n6ª Coordenada de Ec de la curva Yc: " + yc
+                            +"\n7ª Coordenadas del PC de la curva P: " + p
+                            +"\n8ª Coordenadas del PC de la curva K: " + pck
+                            +"\n9ª Tangente de la Espiral STE: " + te
+                            +"\n10ª Externa de la curva espiral Ec: " + ec
+                            +"\n11ª Tangente Larga TL: " + tl
+                            +"\n12ª Tangente Corta TC: " + tc
+                            +"\n13ª Cuerda Larga CLe: " + cle
+                            +"\n14ª Deflexion para Ec: " + pec
+                            +"\n15ª Longitud de la curva Circular: " + lc
+                            +"\nCalculo de Cadenamientos"
+                            +"\n1ª Progresica de TE: " + pte1
+                            +"\n2ª Progresica de EC: " + pec1
+                            +"\n3ª Progresica de CE: " + pce1
+                            +"\n4ª Progresica de ET: " + pet1;
     }
 }
