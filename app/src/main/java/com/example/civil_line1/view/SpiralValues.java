@@ -13,6 +13,8 @@ import android.text.TextWatcher;
 
 import com.example.civil_line1.R;
 
+import model.Espiral;
+
 public class SpiralValues extends AppCompatActivity {
     private ImageButton btnReturn;
     private ImageButton btnSave;
@@ -24,6 +26,7 @@ public class SpiralValues extends AppCompatActivity {
     private EditText GC;
     private EditText Le;
     private EditText DC;
+    private String cadenaOperacionesEspiral;
 
 
     @Override
@@ -55,10 +58,21 @@ public class SpiralValues extends AppCompatActivity {
                     if(estanLlenos()){
                         btnOperations.setText("Operaciones");
                         //carga el evento de los datos
+                        Espiral obj = new Espiral();
+                        //obj.setAngTan(AngTan.getText().toString());
+                        //obj.setPi(Double.parseDouble(PI.getText().toString().trim()));
+                        //obj.setVp(Integer.parseInt(VP.getText().toString().trim()));
+                        //obj.setGc(GC.getText().toString());
+                        //obj.setLe(Integer.parseInt(Le.getText().toString().trim()));
+                        //obj.setDc(Integer.parseInt(DC.getText().toString().trim()));
+                        cadenaOperacionesEspiral = obj.operaciones();
+                        cadenaOperacionesEspiral = "Espiral";
                     }
                 }else{
                     btnOperations.setText("Calcular");
-                    createIntent(OperationsActivity.class);
+                    Intent ope = new Intent(SpiralValues.this,OperationsActivity.class);
+                    ope.putExtra("cadenaE","Espiral");
+                    startActivity(ope);
                 }
             }
         });

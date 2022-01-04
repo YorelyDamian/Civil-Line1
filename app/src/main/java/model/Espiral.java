@@ -6,7 +6,7 @@ public class Espiral {
     public String angTan; /*Total de la curva*/
     public double pi; /*Cadenamiento*/
     public int vp; /*Velocidad de Proyecto*/
-     public String gc; /*Grado de curvatura*/
+    public String gc; /*Grado de curvatura*/
     public int le; /*Longitud de la curvatura espiral*/
     public int dc; /*Deflexion de cadenamiento*/
 
