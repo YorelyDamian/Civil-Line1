@@ -115,7 +115,7 @@ public class Espiral {
     public void setPet(double pet) { this.pet = pet; }
 
     public String operaciones(){
-        String resultado = "";
+        String resultado = "Curva en Espiral\n";
 
         /*1 Operaciones Radio de curvatura (Rc)*/
         //convertirlo a decimal gc
@@ -197,7 +197,7 @@ public class Espiral {
         pet=(pce+le);
         String  pet1 = convertir.convertirCadenamiento(pet);
 
-        return resultado = "1ª Radio de la curva circular: "+ decimalGC
+        resultado += "1ª Radio de la curva circular: "+ decimalGC
                             +"\n2ª Parametro de la espiral: " + k
                             +"\n3ª Deflexion de la espiral: " + gradosOE
                             +"\n4ª Deflexion de la curva circular: " + ac
@@ -217,5 +217,6 @@ public class Espiral {
                             +"\n2ª Progresica de EC: " + pec1
                             +"\n3ª Progresica de CE: " + pce1
                             +"\n4ª Progresica de ET: " + pet1;
+        return resultado;
     }
 }

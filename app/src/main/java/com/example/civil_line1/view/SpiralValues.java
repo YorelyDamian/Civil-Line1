@@ -59,19 +59,18 @@ public class SpiralValues extends AppCompatActivity {
                         btnOperations.setText("Operaciones");
                         //carga el evento de los datos
                         Espiral obj = new Espiral();
-                        //obj.setAngTan(AngTan.getText().toString());
-                        //obj.setPi(Double.parseDouble(PI.getText().toString().trim()));
-                        //obj.setVp(Integer.parseInt(VP.getText().toString().trim()));
-                        //obj.setGc(GC.getText().toString());
-                        //obj.setLe(Integer.parseInt(Le.getText().toString().trim()));
-                        //obj.setDc(Integer.parseInt(DC.getText().toString().trim()));
-                        //cadenaOperacionesEspiral = obj.operaciones();
-                        cadenaOperacionesEspiral = "Espiral";
+                        obj.setAngTan(AngTan.getText().toString());
+                        obj.setPi(Double.parseDouble(PI.getText().toString().trim()));
+                        obj.setVp(Integer.parseInt(VP.getText().toString().trim()));
+                        obj.setGc(GC.getText().toString());
+                        obj.setLe(Integer.parseInt(Le.getText().toString().trim()));
+                        obj.setDc(Integer.parseInt(DC.getText().toString().trim()));
+                        cadenaOperacionesEspiral = obj.operaciones();
                     }
                 }else{
                     btnOperations.setText("Calcular");
                     Intent ope = new Intent(SpiralValues.this,OperationsActivity.class);
-                    ope.putExtra("cadena","Espiral");
+                    ope.putExtra("cadena",cadenaOperacionesEspiral);
                     startActivity(ope);
                 }
             }
