@@ -65,11 +65,14 @@ public class HorizontalSimple {
         String operaciones = "Curva Horizontal\n";
         Operaciones  obj = new Operaciones();
         gradoCurva = obj.convertirADecimales(GC);
+
         RC = 1145.92/gradoCurva;
         operaciones +="RC=1145.92/"+gradoCurva+"\n";
+
         anguloTan = obj.convertirADecimales(AT);
         ST = RC*Math.tan(anguloTan/2);
         operaciones +="ST="+RC+ " * tan("+anguloTan+"/2)\n";
+
         LC = (20*anguloTan)/gradoCurva;
         operaciones +="LC=(20 * "+anguloTan+ ")/"+gradoCurva+"\n";
         CL = 2 * RC * (Math.sin(anguloTan/2));

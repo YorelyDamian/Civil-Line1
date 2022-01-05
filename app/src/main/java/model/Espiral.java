@@ -3,8 +3,8 @@ package model;
 public class Espiral {
 
     /*Variables para los datos de entrada*/
-    public String angTan; /*Total de la curva*/
     public double pi; /*Cadenamiento*/
+    public String angTan; /*Total de la curva*/
     public int vp; /*Velocidad de Proyecto*/
     public String gc; /*Grado de curvatura*/
     public int le; /*Longitud de la curvatura espiral*/
@@ -116,11 +116,9 @@ public class Espiral {
 
     public String operaciones(){
         String resultado = "Curva en Espiral\n";
-
+        Operaciones obj1 = new Operaciones(); //Para convertir a decimal
+        Operaciones obj2 = new Operaciones(); // Para convertirlo en G M S
         /*1 Operaciones Radio de curvatura (Rc)*/
-        //convertirlo a decimal gc
-        //Usamos un objeto de la clase grados
-        Operaciones obj1 = new Operaciones();
         //Llamamos al metodo de la conversion a decimal
         double decimalGC = obj1.convertirADecimales(gc);
         rc=(1146/decimalGC);// obtenemos rc en decimal
@@ -129,11 +127,7 @@ public class Espiral {
         k=Math.sqrt(rc*le);
 
         /*3 Operaciones Deflexion de la espiral(0e)*/
-        oe = (90/Math.PI)*(le/rc); // resultado de oe en decimal
-        //genera el valor en decimal
-        //convertirlo en G M S
-        //Usamos un objeto de la clase Grados
-        Operaciones obj2 = new Operaciones();
+        oe = (90/3.1416)*(le/rc); // resultado de oe en decimal
         //llamamos el metodo de conversion
         String gradosOE = obj2.convertirASeg(oe);//Saca Grados minutos y segundos
 
@@ -142,6 +136,7 @@ public class Espiral {
         //Llamamos al metodo de la conversion a decimal
         double decimalAT = obj1.convertirADecimales(angTan);
         ac=(decimalAT-(2*oe)); //Resultado
+        String decimalAc = obj1.convertirASeg(ac);
 
         /*5 Operaciones Coordenada de Gc de la curva en x (xc)*/
         xc=(le/100)*(100-0.00305)*(Math.pow(oe,2));
@@ -150,34 +145,33 @@ public class Espiral {
         yc=(le/100)*(0.582*oe)-0.0000126*(Math.pow(oe,3));
 
         /*7 Operaciones Coordenadas del Pc de la curva (P)*/
-        double a=Math.toRadians(oe);//primero cambiar a radianes
-        double b=Math.cos(a);//segundo sacar el resultado a coseno
+        double b=Math.cos(oe);//resultado a coseno
         p=yc-(rc*(1-b));//resultado de p
 
         /*8 Operaciones Coordenadas del Pc de la curva (K)*/
-        double b1=Math.sin(a);
-        pck=(xc)-(rc*(b1));
+        double b1=Math.sin(oe);
+        pck=(xc)-(rc*(b1));//resultado de pck
 
         /*9 Operaciones Tangente de la espiral (ste)*/
-         te=(k)+(rc+p)*Math.tan(decimalAT/2);
+         te=(pck)+(rc+p)*Math.tan(decimalAT/2);
 
         /*10 Operaciones Externa de la curva espiral (ec)*/
-         ec=(rc+p)*Math.sin(decimalAT/2)-(rc);
+        ec=(rc+p)*Math.sin(decimalAT/2)-(rc);
 
         /*11 Operaciones Tagente larga (tl)*/
-        tl=xc - yc/Math.tan(oc);
+        tl=xc-(yc/Math.tan(oe));
 
         /*12 Operaciones Tangente corta (tc)*/
-        tc=xc - yc/Math.sin(oc);
+        tc=xc - yc/Math.sin(oe);
 
         /*13 Operaciones Cuerda larga (Cle)*/
          cle=Math.sqrt(Math.pow(xc,2)+Math.pow(yc,2));
 
         /*14 Operaciones Deflexion para Gc (pe)*/
-        pec=Math.tan(yc/xc);
+        oc=Math.tan(yc/xc);
 
         /*15 Operaciones longitud de la curva circular (lc)*/
-         lc=(20*ac)/decimalGC;
+        lc=(20*ac)/decimalGC;
 
         /*Calculo de progresivas o cadenamiento*/
         Operaciones convertir= new Operaciones();
@@ -200,7 +194,7 @@ public class Espiral {
         resultado += "1ª Radio de la curva circular: "+ decimalGC
                             +"\n2ª Parametro de la espiral: " + k
                             +"\n3ª Deflexion de la espiral: " + gradosOE
-                            +"\n4ª Deflexion de la curva circular: " + ac
+                            +"\n4ª Deflexion de la curva circular: " + decimalAc
                             +"\n5ª Coordenada Ec de la curva en Xc: " + xc
                             +"\n6ª Coordenada de Ec de la curva Yc: " + yc
                             +"\n7ª Coordenadas del PC de la curva P: " + p

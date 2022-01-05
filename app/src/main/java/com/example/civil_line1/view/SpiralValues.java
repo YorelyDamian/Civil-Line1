@@ -84,6 +84,7 @@ public class SpiralValues extends AppCompatActivity {
                 Le.setText(null);
                 GC.setText(null);
                 DC.setText(null);
+                Le.setText(null);
             }
         });
         cargarEvento(AngTan);
