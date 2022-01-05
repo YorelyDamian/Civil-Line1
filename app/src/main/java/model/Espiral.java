@@ -143,14 +143,14 @@ public class Espiral {
         String decimalAc = obj1.convertirASeg(ac);
 
         /*5 Operaciones Coordenada de Gc de la curva en x (xc)*/
-        double a=(100/52);
-        xc=(a)*(100-0.00305*Math.pow(oe,2));
-        resultado += "\nresultado a :" + a;
+        double a=le*0.01;
+        xc=(100-0.00305*Math.pow(oe,2))*a;
+        //resultado += "\nresultado a :" + xc;
 
         /*6 Operaciones Coordenada de Gc de la curva en y (yc)*/
-        double b=(100/52);
+        double b=le/0.01;
         yc=(b)*(0.582*oe)-0.0000126*Math.pow(oe,3);
-        resultado += "\nresultado a :" + b;
+        //resultado += "\nresultado a :" + yc;
 
         /*7 Operaciones Coordenadas del Pc de la curva (P)*/
         double d=Math.cos(oe);//resultado a coseno
@@ -203,7 +203,7 @@ public class Espiral {
                             +"\n2ª Parametro de la espiral: " + k
                             +"\n3ª Deflexion de la espiral: " + gradosOE
                             +"\n4ª Deflexion de la curva circular: " + decimalAc
-                            +"\n5ª Coordenada Ec de la curva en Xc: " + xc
+                            +"\n5ª Coordenada Ec de la curva en Xc : " + xc
                             +"\n6ª Coordenada de Ec de la curva Yc: " + yc
                             +"\n7ª Coordenadas del PC de la curva P: " + p
                             +"\n8ª Coordenadas del PC de la curva K: " + pck
