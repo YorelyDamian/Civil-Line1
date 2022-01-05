@@ -60,17 +60,16 @@ public class HorizontalValues extends AppCompatActivity {
                         btnOperations.setText("Operaciones");
                         //Cargar evento de los datos
                         HorizontalSimple obj = new HorizontalSimple();
-                        //obj.setAT(AngTan.getText().toString());
-                        //obj.setGradoCurva(Double.parseDouble(GC.getText().toString().trim()));
-                        //obj.setGradoCurva(Double.parseDouble(PI.getText().toString().trim()));
-                        //obj.setGradoCurva(Double.parseDouble(VP.getText().toString().trim()));
-                        //cadenaOperaciones = obj.calcularCurva();
-                        cadenaOperaciones = "Horizontal";
+                        obj.setAT(AngTan.getText().toString());
+                        obj.setGC((GC.getText().toString().trim()));
+                        obj.setPuntoInter(Double.parseDouble(PI.getText().toString().trim()));
+                        obj.setVelocProy(Double.parseDouble(VP.getText().toString().trim()));
+                        cadenaOperaciones = obj.calcularCurva();
                     }
                 }else{
                     btnOperations.setText("Calcular");
                     Intent op = new Intent(HorizontalValues.this,OperationsActivity.class);
-                    op.putExtra("cadena", "Horizontal");
+                    op.putExtra("cadena", cadenaOperaciones);
                     startActivity(op);
                 }
             }
