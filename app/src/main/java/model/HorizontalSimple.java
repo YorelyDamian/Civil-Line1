@@ -70,16 +70,16 @@ public class HorizontalSimple {
         operaciones +="RC=1145.92/"+gradoCurva+"\n";
 
         anguloTan = obj.convertirADecimales(AT);
-        ST = RC*Math.tan(anguloTan/2);
+        ST = RC*Math.tan(Math.toRadians(anguloTan/2));
         operaciones +="ST="+RC+ " * tan("+anguloTan+"/2)\n";
 
         LC = (20*anguloTan)/gradoCurva;
         operaciones +="LC=(20 * "+anguloTan+ ")/"+gradoCurva+"\n";
-        CL = 2 * RC * (Math.sin(anguloTan/2));
+        CL = 2 * RC * (Math.sin(Math.toRadians(anguloTan/2)));
         operaciones +="CL=(2 * "+RC+ "* sin("+anguloTan+"/2)\n";
-        M = RC * (1-Math.cos(anguloTan/2));
+        M = RC * (1-Math.cos(Math.toRadians(anguloTan/2)));
         operaciones +="M = "+RC+ "*(1-cos("+anguloTan+"/2))\n";
-        E = RC * ((1/(Math.cos(anguloTan/2)))-1);
+        E = RC * ((1/(Math.cos(Math.toRadians(anguloTan/2))))-1);
         operaciones +="E = "+RC+ "*((1/(cos("+anguloTan+"/2)))-1)\n";
         PC = puntoInter - ST;
         operaciones +="PC = "+puntoInter+ "-"+ST+"\n";
