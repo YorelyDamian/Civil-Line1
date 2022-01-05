@@ -53,63 +53,6 @@ public class Espiral {
     public int getDc() { return dc; }
     public void setDc(int dc) { this.dc = dc; }
 
-    /*Creacion de get y set para las operaciones */
-    /*get y set de rc*/
-    public double getRc() { return rc; }
-    public void setRc(double rc) { this.rc = rc; }
-    /*get y set de k*/
-    public double getK() { return k; }
-    public void setK(double k) { this.k = k; }
-    /*get y set de oe*/
-    public double getOe() { return oe; }
-    public void setOe(double oe) { this.oe = oe; }
-    /*get y set de ac*/
-    public double getAc() { return ac; }
-    public void setAc(double ac) { this.ac = ac; }
-
-
-    /*get y set de p*/
-    public double getP() { return p; }
-    public void setP(double p) { this.p = p; }
-    /*get y set de pck*/
-    public double getPck() { return pck; }
-    public void setPck(double pck) { this.pck = pck; }
-    /*get y set de te*/
-    public double getTe() { return te; }
-    public void setTe(double te) { this.te = te; }
-    /*get y set de ec*/
-    public double getEc() { return ec; }
-    public void setEc(double ec) { this.ec = ec; }
-    /*get y set de tl*/
-    public double getTl() { return tl; }
-    public void setTl(double tl) { this.tl = tl; }
-    /*get y set de tc*/
-    public double getTc() { return tc; }
-    public void setTc(double tc) { this.tc = tc; }
-    /*get y set de cle*/
-    public double getCle() { return cle; }
-    public void setCle(double cle) { this.cle = cle; }
-    /*get y set de oc*/
-    public double getOc() { return oc; }
-    public void setOc(double oc) { this.oc = oc; }
-    /*get y set de lc*/
-    public double getLc() { return lc; }
-    public void setLc(double lc) { this.lc = lc; }
-
-    /*Creacion de get y set de calculo de cadenamiento*/
-    /*get y set de pte*/
-    public double getPte() { return pte; }
-    public void setPte(double pte) { this.pte = pte; }
-    /*get y set de pec*/
-    public double getPec() { return pec; }
-    public void setPec(double pec) { this.pec = pec; }
-    /*get y set de pce*/
-    public double getPce() { return pce; }
-    public void setPce(double pce) { this.pce = pce; }
-    /*get y set de pet*/
-    public double getPet() { return pet; }
-    public void setPet(double pet) { this.pet = pet; }
-
     public String operaciones(){
         String resultado = "Curva en Espiral\n";
         Operaciones obj1 = new Operaciones(); //Para convertir a decimal
@@ -145,19 +88,16 @@ public class Espiral {
         /*5 Operaciones Coordenada de Gc de la curva en x (xc)*/
         double a=le*0.01;
         xc=(100-0.00305*Math.pow(oe,2))*a;
-        //resultado += "\nresultado a :" + xc;
 
         /*6 Operaciones Coordenada de Gc de la curva en y (yc)*/
-        double b=le/0.01;
-        yc=(b)*(0.582*oe)-0.0000126*Math.pow(oe,3);
-        //resultado += "\nresultado a :" + yc;
+        yc=(le/0.01)*(0.582*oe-0.0000126)*Math.pow(oe,3);
 
         /*7 Operaciones Coordenadas del Pc de la curva (P)*/
-        double d=Math.cos(oe);//resultado a coseno
-        p=yc-(rc*(1-d));//resultado de p
+        double a1=1-Math.cos(Math.toRadians(oe));
+        p=(yc)-(rc*(a1));//resultado de p
 
         /*8 Operaciones Coordenadas del Pc de la curva (K)*/
-        double b1=Math.sin(oe);
+        double b1=Math.sin(Math.toRadians(oe));
         pck=(xc)-(rc*(b1));//resultado de pck
 
         /*9 Operaciones Tangente de la espiral (ste)*/
@@ -170,7 +110,7 @@ public class Espiral {
         tl=xc-(yc/Math.tan(oe));
 
         /*12 Operaciones Tangente corta (tc)*/
-        tc=xc - yc/Math.sin(oe);
+        tc=yc/Math.sin(oe);
 
         /*13 Operaciones Cuerda larga (Cle)*/
         cle=Math.sqrt(Math.pow(xc,2)+Math.pow(yc,2));

@@ -75,16 +75,22 @@ public class HorizontalSimple {
 
         LC = (20*anguloTan)/gradoCurva;
         operaciones +="LC=(20 * "+anguloTan+ ")/"+gradoCurva+"\n";
+
         CL = 2 * RC * (Math.sin(Math.toRadians(anguloTan/2)));
         operaciones +="CL=(2 * "+RC+ "* sin("+anguloTan+"/2)\n";
+
         M = RC * (1-Math.cos(Math.toRadians(anguloTan/2)));
         operaciones +="M = "+RC+ "*(1-cos("+anguloTan+"/2))\n";
+
         E = RC * ((1/(Math.cos(Math.toRadians(anguloTan/2))))-1);
         operaciones +="E = "+RC+ "*((1/(cos("+anguloTan+"/2)))-1)\n";
+
         PC = puntoInter - ST;
         operaciones +="PC = "+puntoInter+ "-"+ST+"\n";
+
         PT = PC + LC;
         operaciones +="PT = "+PC+ "+"+LC+"\n";
+
         operaciones += "\n AT = "+AT
                         +"\n GC = "+GC
                         +"\nPI = "+puntoInter
