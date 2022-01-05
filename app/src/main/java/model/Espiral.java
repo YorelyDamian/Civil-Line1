@@ -66,12 +66,8 @@ public class Espiral {
     /*get y set de ac*/
     public double getAc() { return ac; }
     public void setAc(double ac) { this.ac = ac; }
-    /*get y set de xc*/
-    public double getXc() { return xc; }
-    public void setXc(double xc) { this.xc = xc; }
-    /*get y set de yc*/
-    public double getYc() { return yc; }
-    public void setYc(double yc) { this.yc = yc; }
+
+
     /*get y set de p*/
     public double getP() { return p; }
     public void setP(double p) { this.p = p; }
@@ -118,13 +114,21 @@ public class Espiral {
         String resultado = "Curva en Espiral\n";
         Operaciones obj1 = new Operaciones(); //Para convertir a decimal
         Operaciones obj2 = new Operaciones(); // Para convertirlo en G M S
+
+        resultado += "Cadenamiento PI: " + pi +
+                    "\nTotal de la curva: "+ angTan +
+                    "\nVelocidad de proyecto: "+ vp +
+                    "\nGrado de curvatura: "+ gc +
+                    "\nLongitud de la curva espiral: " + le;
+
         /*1 Operaciones Radio de curvatura (Rc)*/
         //Llamamos al metodo de la conversion a decimal
         double decimalGC = obj1.convertirADecimales(gc);
         rc=(1146/decimalGC);// obtenemos rc en decimal
 
         /*2 Operaciones Parametro de la espiral (e)*/
-        k=Math.sqrt(rc*le);
+        double pk=(rc*le);
+        k=Math.sqrt(pk);
 
         /*3 Operaciones Deflexion de la espiral(0e)*/
         oe = (90/3.1416)*(le/rc); // resultado de oe en decimal
@@ -139,21 +143,25 @@ public class Espiral {
         String decimalAc = obj1.convertirASeg(ac);
 
         /*5 Operaciones Coordenada de Gc de la curva en x (xc)*/
-        xc=(le/100)*(100-0.00305)*(Math.pow(oe,2));
+        double a=(100/52);
+        xc=(a)*(100-0.00305*Math.pow(oe,2));
+        resultado += "\nresultado a :" + a;
 
         /*6 Operaciones Coordenada de Gc de la curva en y (yc)*/
-        yc=(le/100)*(0.582*oe)-0.0000126*(Math.pow(oe,3));
+        double b=(100/52);
+        yc=(b)*(0.582*oe)-0.0000126*Math.pow(oe,3);
+        resultado += "\nresultado a :" + b;
 
         /*7 Operaciones Coordenadas del Pc de la curva (P)*/
-        double b=Math.cos(oe);//resultado a coseno
-        p=yc-(rc*(1-b));//resultado de p
+        double d=Math.cos(oe);//resultado a coseno
+        p=yc-(rc*(1-d));//resultado de p
 
         /*8 Operaciones Coordenadas del Pc de la curva (K)*/
         double b1=Math.sin(oe);
         pck=(xc)-(rc*(b1));//resultado de pck
 
         /*9 Operaciones Tangente de la espiral (ste)*/
-         te=(pck)+(rc+p)*Math.tan(decimalAT/2);
+        te=(pck)+(rc+p)*Math.tan(decimalAT/2);
 
         /*10 Operaciones Externa de la curva espiral (ec)*/
         ec=(rc+p)*Math.sin(decimalAT/2)-(rc);
@@ -165,7 +173,7 @@ public class Espiral {
         tc=xc - yc/Math.sin(oe);
 
         /*13 Operaciones Cuerda larga (Cle)*/
-         cle=Math.sqrt(Math.pow(xc,2)+Math.pow(yc,2));
+        cle=Math.sqrt(Math.pow(xc,2)+Math.pow(yc,2));
 
         /*14 Operaciones Deflexion para Gc (pe)*/
         oc=Math.tan(yc/xc);
@@ -191,7 +199,7 @@ public class Espiral {
         pet=(pce+le);
         String  pet1 = convertir.convertirCadenamiento(pet);
 
-        resultado += "1ª Radio de la curva circular: "+ decimalGC
+        resultado += "\n1ª Radio de la curva circular: "+ rc
                             +"\n2ª Parametro de la espiral: " + k
                             +"\n3ª Deflexion de la espiral: " + gradosOE
                             +"\n4ª Deflexion de la curva circular: " + decimalAc

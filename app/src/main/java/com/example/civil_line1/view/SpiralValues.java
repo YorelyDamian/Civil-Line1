@@ -145,7 +145,7 @@ public class SpiralValues extends AppCompatActivity {
         PI = (EditText) findViewById(R.id.PIEspiral);
         VP = (EditText) findViewById(R.id.VPEspiral);
         GC = (EditText) findViewById(R.id.GCEspiral);
-        Le = (EditText) findViewById(R.id.PIEspiral);
+        Le = (EditText) findViewById(R.id.LEEspiral);
         DC = (EditText) findViewById(R.id.DCEspiral);
     }
 }
