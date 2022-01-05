@@ -8,7 +8,8 @@ public class HorizontalSimple {
     private double anguloTan;
     private double puntoInter;
     private double velocProy;
-
+    private String PrC;
+    private String PrT;
 
     private double gradoCurva;
 
@@ -86,9 +87,11 @@ public class HorizontalSimple {
         operaciones +="E = "+RC+ "*((1/(cos("+anguloTan+"/2)))-1)\n";
 
         PC = puntoInter - ST;
+        PrC = obj.convertirCadenamiento(PC);
         operaciones +="PC = "+puntoInter+ "-"+ST+"\n";
 
         PT = PC + LC;
+        PrT = obj.convertirCadenamiento(PT);
         operaciones +="PT = "+PC+ "+"+LC+"\n";
 
         operaciones += "\n AT = "+AT
@@ -101,8 +104,8 @@ public class HorizontalSimple {
                         +"\nCL = "+CL
                         +"\nM  = "+M
                         +"\nE  = "+E
-                        +"\nPC = "+PC
-                        +"\nPT = "+PT;
+                        +"\nPC = "+PrC
+                        +"\nPT = "+PrT;
         return operaciones;
     }
 }
