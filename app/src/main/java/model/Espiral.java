@@ -61,9 +61,9 @@ public class Espiral {
 
         resultado += "Cadenamiento PI: " + pi +
                     "\nTotal de la curva: "+ angTan +
-                    "\nVelocidad de proyecto: "+ vp +
+                    "\nVelocidad de proyecto: "+ vp + " km/h"+
                     "\nGrado de curvatura: "+ gc +
-                    "\nLongitud de la curva espiral: " + le
+                    "\nLongitud de la curva espiral: " + le +" m"
                 ;
 
         /*1 Operaciones Radio de curvatura (Rc)*/
@@ -142,26 +142,26 @@ public class Espiral {
         String  pet1 = convertir.convertirCadenamiento(pet);
 
         DecimalFormat df = new DecimalFormat("###.##");
-        resultado += "\n1ª Radio de la curva circular: "+ df.format(rc)
-                            +"\n2ª Parametro de la espiral: " + df.format(k)
+        resultado += "\n1ª Radio de la curva circular: "+ df.format(rc)+" m"
+                            +"\n2ª Parametro de la espiral: " + df.format(k)+" m"
                             +"\n3ª Deflexion de la espiral: " + gradosOE
-                            +"\n4ª Deflexion de la curva circular: " + decimalAc
-                            +"\n5ª Coordenada Ec de la curva en Xc : " + df.format(xc)
-                            +"\n6ª Coordenada de Ec de la curva Yc: " + df.format(yc)
-                            +"\n7ª Coordenadas del PC de la curva P: " + df.format(p)
-                            +"\n8ª Coordenadas del PC de la curva K: " + df.format(pck)
-                            +"\n9ª Tangente de la Espiral STE: " + df.format(te)
-                            +"\n10ª Externa de la curva espiral Ec: " + df.format(ec)
-                            +"\n11ª Tangente Larga TL: " + df.format(tl)
-                            +"\n12ª Tangente Corta TC: " + df.format(tc)
-                            +"\n13ª Cuerda Larga CLe: " + df.format(cle)
-                            +"\n14ª Deflexion para Ec: " + df.format(oc)
-                            +"\n15ª Longitud de la curva Circular: " + df.format(lc)
+                            +"\n4ª Deflexion de la curva circular: " + decimalAc+" m"
+                            +"\n5ª Coordenada Ec de la curva en Xc : " + df.format(xc) +" m"
+                            +"\n6ª Coordenada de Ec de la curva Yc: " + df.format(yc)+" m"
+                            +"\n7ª Coordenadas del PC de la curva P: " + df.format(p)+" m"
+                            +"\n8ª Coordenadas del PC de la curva K: " + df.format(pck)+" m"
+                            +"\n9ª Tangente de la Espiral STE: " + df.format(te)+" m"
+                            +"\n10ª Externa de la curva espiral Ec: " + df.format(ec)+" m"
+                            +"\n11ª Tangente Larga TL: " + df.format(tl)+" m"
+                            +"\n12ª Tangente Corta TC: " + df.format(tc)+" m"
+                            +"\n13ª Cuerda Larga CLe: " + df.format(cle)+" m"
+                            +"\n14ª Deflexion para Ec: " + df.format(oc)+" m"
+                            +"\n15ª Longitud de la curva Circular: " + df.format(lc)+" m"
                             +"\nCalculo de Cadenamientos"
-                            +"\n1ª Progresica de TE: " + pte1
-                            +"\n2ª Progresica de EC: " + pec1
-                            +"\n3ª Progresica de CE: " + pce1
-                            +"\n4ª Progresica de ET: " + pet1;
+                            +"\n1ª Progresica de TE: " + pte1+" m"
+                            +"\n2ª Progresica de EC: " + pec1 +" m"
+                            +"\n3ª Progresica de CE: " + pce1 +" m"
+                            +"\n4ª Progresica de ET: " + pet1 +" m";
         return resultado;
     }
 }
