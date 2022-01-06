@@ -1,7 +1,6 @@
 package model;
 
-import android.widget.Toast;
-
+import java.text.DecimalFormat;
 public class Espiral {
 
     /*Variables para los datos de entrada*/
@@ -142,20 +141,21 @@ public class Espiral {
         pet=(pce+le);
         String  pet1 = convertir.convertirCadenamiento(pet);
 
-        resultado += "\n1ª Radio de la curva circular: "+ rc
-                            +"\n2ª Parametro de la espiral: " + k
+        DecimalFormat df = new DecimalFormat("###.##");
+        resultado += "\n1ª Radio de la curva circular: "+ df.format(rc)
+                            +"\n2ª Parametro de la espiral: " + df.format(k)
                             +"\n3ª Deflexion de la espiral: " + gradosOE
                             +"\n4ª Deflexion de la curva circular: " + decimalAc
-                            +"\n5ª Coordenada Ec de la curva en Xc : " + xc
-                            +"\n6ª Coordenada de Ec de la curva Yc: " + yc
-                            +"\n7ª Coordenadas del PC de la curva P: " + p
-                            +"\n8ª Coordenadas del PC de la curva K: " + pck
-                            +"\n9ª Tangente de la Espiral STE: " + te
-                            +"\n10ª Externa de la curva espiral Ec: " + ec
-                            +"\n11ª Tangente Larga TL: " + tl
-                            +"\n12ª Tangente Corta TC: " + tc
-                            +"\n13ª Cuerda Larga CLe: " + cle
-                            +"\n14ª Deflexion para Ec: " + oc
+                            +"\n5ª Coordenada Ec de la curva en Xc : " + df.format(xc)
+                            +"\n6ª Coordenada de Ec de la curva Yc: " + df.format(yc)
+                            +"\n7ª Coordenadas del PC de la curva P: " + df.format(p)
+                            +"\n8ª Coordenadas del PC de la curva K: " + df.format(pck)
+                            +"\n9ª Tangente de la Espiral STE: " + df.format(te)
+                            +"\n10ª Externa de la curva espiral Ec: " + df.format(ec)
+                            +"\n11ª Tangente Larga TL: " + df.format(tl)
+                            +"\n12ª Tangente Corta TC: " + df.format(tc)
+                            +"\n13ª Cuerda Larga CLe: " + df.format(cle)
+                            +"\n14ª Deflexion para Ec: " + df.format(oc)
                             +"\n15ª Longitud de la curva Circular: " + lc
                             +"\nCalculo de Cadenamientos"
                             +"\n1ª Progresica de TE: " + pte1
