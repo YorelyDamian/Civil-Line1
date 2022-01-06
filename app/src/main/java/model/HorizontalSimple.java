@@ -1,5 +1,7 @@
 package model;
 
+import java.text.DecimalFormat;
+
 public class HorizontalSimple {
     /*Creacion de variables para los datos de entrada*/
 
@@ -68,44 +70,44 @@ public class HorizontalSimple {
         gradoCurva = obj.convertirADecimales(GC);
 
         RC = 1145.92/gradoCurva;
-        operaciones +="RC=1145.92/"+gradoCurva+"\n";
+        operaciones += "RC = 1145.92 / " + gradoCurva + "\n";
 
         anguloTan = obj.convertirADecimales(AT);
         ST = RC*Math.tan(Math.toRadians(anguloTan/2));
-        operaciones +="ST="+RC+ " * tan("+anguloTan+"/2)\n";
+        operaciones += "ST = " + RC + " * tan( " + anguloTan + " / 2 )\n";
 
         LC = (20*anguloTan)/gradoCurva;
-        operaciones +="LC=(20 * "+anguloTan+ ")/"+gradoCurva+"\n";
+        operaciones += "LC = ( 20 * " + anguloTan + " ) / " + gradoCurva + "\n";
 
         CL = 2 * RC * (Math.sin(Math.toRadians(anguloTan/2)));
-        operaciones +="CL=(2 * "+RC+ "* sin("+anguloTan+"/2)\n";
+        operaciones += "CL = ( 2 * " + RC + " * sin( " + anguloTan + " / 2 )\n";
 
         M = RC * (1-Math.cos(Math.toRadians(anguloTan/2)));
-        operaciones +="M = "+RC+ "*(1-cos("+anguloTan+"/2))\n";
+        operaciones += "M = " + RC + " * ( 1 - cos( " + anguloTan + " / 2 ))\n";
 
         E = RC * ((1/(Math.cos(Math.toRadians(anguloTan/2))))-1);
-        operaciones +="E = "+RC+ "*((1/(cos("+anguloTan+"/2)))-1)\n";
+        operaciones += "E = " + RC + " * (( 1 / ( cos( " + anguloTan + " / 2 ))) -1 )\n";
 
         PC = puntoInter - ST;
         PrC = obj.convertirCadenamiento(PC);
-        operaciones +="PC = "+puntoInter+ "-"+ST+"\n";
+        operaciones += "PC = " + puntoInter + " - " + ST + "\n";
 
         PT = PC + LC;
         PrT = obj.convertirCadenamiento(PT);
-        operaciones +="PT = "+PC+ "+"+LC+"\n";
-
-        operaciones += "\n AT = "+AT
-                        +"\n GC = "+GC
-                        +"\nPI = "+puntoInter
-                        +"\nVP = "+velocProy
-                        +"\nRC = "+RC
-                        +"\nST = "+ST
-                        +"\nLC = "+LC
-                        +"\nCL = "+CL
-                        +"\nM  = "+M
-                        +"\nE  = "+E
-                        +"\nPC = "+PrC
-                        +"\nPT = "+PrT;
+        operaciones += "PT = " + PC + " + " + LC + "\n";
+        DecimalFormat df = new DecimalFormat("###.##");
+        operaciones += "\nAT = "+AT
+                        + "\nGC = " +GC
+                        + "\nPI = " + puntoInter
+                        + "\nVP = " + velocProy + " km/h"
+                        + "\nRC = " + df.format(RC) + " m"
+                        + "\nST = " + df.format(ST) + " m"
+                        + "\nLC = " + df.format(LC) + " m"
+                        + "\nCL = " + df.format(CL) + " m"
+                        + "\nM  = " + df.format(M) + " m"
+                        + "\nE  = " + df.format(E) + " m"
+                        + "\nPC = " + PrC
+                        + "\nPT = " + PrT;
         return operaciones;
     }
 }
