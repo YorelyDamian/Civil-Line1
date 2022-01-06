@@ -1,5 +1,7 @@
 package model;
 
+import java.text.DecimalFormat;
+
 public class HorizontalSimple {
     /*Creacion de variables para los datos de entrada*/
 
@@ -93,17 +95,17 @@ public class HorizontalSimple {
         PT = PC + LC;
         PrT = obj.convertirCadenamiento(PT);
         operaciones +="PT = "+PC+ "+"+LC+"\n";
-
+        DecimalFormat df = new DecimalFormat("###.##");
         operaciones += "\n AT = "+AT
                         +"\n GC = "+GC
                         +"\nPI = "+puntoInter
                         +"\nVP = "+velocProy
-                        +"\nRC = "+RC
-                        +"\nST = "+ST
-                        +"\nLC = "+LC
-                        +"\nCL = "+CL
-                        +"\nM  = "+M
-                        +"\nE  = "+E
+                        +"\nRC = "+df.format(RC)
+                        +"\nST = "+df.format(ST)
+                        +"\nLC = "+df.format(LC)
+                        +"\nCL = "+df.format(CL)
+                        +"\nM  = "+df.format(M)
+                        +"\nE  = "+df.format(E)
                         +"\nPC = "+PrC
                         +"\nPT = "+PrT;
         return operaciones;
