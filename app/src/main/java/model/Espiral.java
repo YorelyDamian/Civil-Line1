@@ -1,5 +1,7 @@
 package model;
 
+import android.widget.Toast;
+
 public class Espiral {
 
     /*Variables para los datos de entrada*/
@@ -105,19 +107,19 @@ public class Espiral {
         te=(pck)+(rc+p)*Math.tan(Math.toRadians(decimalAT/2));
 
         /*10 Operaciones Externa de la curva espiral (ec)*/
-        ec=(rc+p)*Math.sin(decimalAT/2)-(rc);
+        ec=(rc+p)*(1/Math.cos(Math.toRadians(decimalAT)/2))-(rc);
 
         /*11 Operaciones Tagente larga (tl)*/
-        tl=xc-(yc/Math.tan(oe));
+        tl=xc-(yc/Math.tan(Math.toRadians(oe)));
 
         /*12 Operaciones Tangente corta (tc)*/
-        tc=yc/Math.sin(oe);
+        tc=yc/Math.sin(Math.toRadians(oe));
 
         /*13 Operaciones Cuerda larga (Cle)*/
         cle=Math.sqrt(Math.pow(xc,2)+Math.pow(yc,2));
 
         /*14 Operaciones Deflexion para Gc (pe)*/
-        oc=Math.tan(yc/xc);
+        oc=Math.toDegrees(Math.atan(yc/xc));
 
         /*15 Operaciones longitud de la curva circular (lc)*/
         lc=(20*ac)/decimalGC;
@@ -153,13 +155,14 @@ public class Espiral {
                             +"\n11ª Tangente Larga TL: " + tl
                             +"\n12ª Tangente Corta TC: " + tc
                             +"\n13ª Cuerda Larga CLe: " + cle
-                            +"\n14ª Deflexion para Ec: " + pec
+                            +"\n14ª Deflexion para Ec: " + oc
                             +"\n15ª Longitud de la curva Circular: " + lc
                             +"\nCalculo de Cadenamientos"
                             +"\n1ª Progresica de TE: " + pte1
                             +"\n2ª Progresica de EC: " + pec1
                             +"\n3ª Progresica de CE: " + pce1
-                            +"\n4ª Progresica de ET: " + pet1;
+                            +"\n4ª Progresica de ET: " + pet1
+        +"\nDebug: "+ yc/xc;
         return resultado;
     }
 }
