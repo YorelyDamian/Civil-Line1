@@ -62,7 +62,8 @@ public class Espiral {
                     "\nTotal de la curva: "+ angTan +
                     "\nVelocidad de proyecto: "+ vp +
                     "\nGrado de curvatura: "+ gc +
-                    "\nLongitud de la curva espiral: " + le;
+                    "\nLongitud de la curva espiral: " + le
+                ;
 
         /*1 Operaciones Radio de curvatura (Rc)*/
         //Llamamos al metodo de la conversion a decimal
@@ -90,7 +91,7 @@ public class Espiral {
         xc=(100-0.00305*Math.pow(oe,2))*a;
 
         /*6 Operaciones Coordenada de Gc de la curva en y (yc)*/
-        yc=(le/0.01)*(0.582*oe-0.0000126)*Math.pow(oe,3);
+        yc=(le*0.01)*((0.582*oe)-(0.0000126*Math.pow(oe,3)));
 
         /*7 Operaciones Coordenadas del Pc de la curva (P)*/
         double a1=1-Math.cos(Math.toRadians(oe));
@@ -101,7 +102,7 @@ public class Espiral {
         pck=(xc)-(rc*(b1));//resultado de pck
 
         /*9 Operaciones Tangente de la espiral (ste)*/
-        te=(pck)+(rc+p)*Math.tan(decimalAT/2);
+        te=(pck)+(rc+p)*Math.tan(Math.toRadians(decimalAT/2));
 
         /*10 Operaciones Externa de la curva espiral (ec)*/
         ec=(rc+p)*Math.sin(decimalAT/2)-(rc);
