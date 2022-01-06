@@ -156,7 +156,7 @@ public class Espiral {
                             +"\n12ª Tangente Corta TC: " + df.format(tc)
                             +"\n13ª Cuerda Larga CLe: " + df.format(cle)
                             +"\n14ª Deflexion para Ec: " + df.format(oc)
-                            +"\n15ª Longitud de la curva Circular: " + lc
+                            +"\n15ª Longitud de la curva Circular: " + df.format(lc)
                             +"\nCalculo de Cadenamientos"
                             +"\n1ª Progresica de TE: " + pte1
                             +"\n2ª Progresica de EC: " + pec1
