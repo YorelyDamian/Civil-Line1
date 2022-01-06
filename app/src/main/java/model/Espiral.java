@@ -131,7 +131,7 @@ public class Espiral {
         String  pte1 = convertir.convertirCadenamiento(pte);
 
         /*2 Operaciones Progresiva  (ce)*/
-        pec=(te+le);
+        pec=(pte+le);
         String  pec1 = convertir.convertirCadenamiento(pec);
 
         /*3 Operaciones ce*/
@@ -161,8 +161,7 @@ public class Espiral {
                             +"\n1ª Progresica de TE: " + pte1
                             +"\n2ª Progresica de EC: " + pec1
                             +"\n3ª Progresica de CE: " + pce1
-                            +"\n4ª Progresica de ET: " + pet1
-        +"\nDebug: "+ yc/xc;
+                            +"\n4ª Progresica de ET: " + pet1;
         return resultado;
     }
 }
