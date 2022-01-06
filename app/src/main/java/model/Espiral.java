@@ -1,7 +1,5 @@
 package model;
 
-import android.widget.Toast;
-
 public class Espiral {
 
     /*Variables para los datos de entrada*/
@@ -62,10 +60,9 @@ public class Espiral {
 
         resultado += "Cadenamiento PI: " + pi +
                     "\nTotal de la curva: "+ angTan +
-                    "\nVelocidad de proyecto: "+ vp +
+                    "\nVelocidad de proyecto: "+ vp + " km/h"+
                     "\nGrado de curvatura: "+ gc +
-                    "\nLongitud de la curva espiral: " + le
-                ;
+                    "\nLongitud de la curva espiral: " + le + " m";
 
         /*1 Operaciones Radio de curvatura (Rc)*/
         //Llamamos al metodo de la conversion a decimal
@@ -93,7 +90,7 @@ public class Espiral {
         xc=(100-0.00305*Math.pow(oe,2))*a;
 
         /*6 Operaciones Coordenada de Gc de la curva en y (yc)*/
-        yc=(le*0.01)*((0.582*oe)-(0.0000126*Math.pow(oe,3)));
+        yc=(le/0.01)*(0.582*oe-0.0000126)*Math.pow(oe,3);
 
         /*7 Operaciones Coordenadas del Pc de la curva (P)*/
         double a1=1-Math.cos(Math.toRadians(oe));
@@ -104,22 +101,22 @@ public class Espiral {
         pck=(xc)-(rc*(b1));//resultado de pck
 
         /*9 Operaciones Tangente de la espiral (ste)*/
-        te=(pck)+(rc+p)*Math.tan(Math.toRadians(decimalAT/2));
+        te=(pck)+(rc+p)*Math.tan(decimalAT/2);
 
         /*10 Operaciones Externa de la curva espiral (ec)*/
-        ec=(rc+p)*(1/Math.cos(Math.toRadians(decimalAT)/2))-(rc);
+        ec=(rc+p)*Math.sin(decimalAT/2)-(rc);
 
         /*11 Operaciones Tagente larga (tl)*/
-        tl=xc-(yc/Math.tan(Math.toRadians(oe)));
+        tl=xc-(yc/Math.tan(oe));
 
         /*12 Operaciones Tangente corta (tc)*/
-        tc=yc/Math.sin(Math.toRadians(oe));
+        tc=yc/Math.sin(oe);
 
         /*13 Operaciones Cuerda larga (Cle)*/
         cle=Math.sqrt(Math.pow(xc,2)+Math.pow(yc,2));
 
         /*14 Operaciones Deflexion para Gc (pe)*/
-        oc=Math.toDegrees(Math.atan(yc/xc));
+        oc=Math.tan(yc/xc);
 
         /*15 Operaciones longitud de la curva circular (lc)*/
         lc=(20*ac)/decimalGC;
@@ -131,7 +128,7 @@ public class Espiral {
         String  pte1 = convertir.convertirCadenamiento(pte);
 
         /*2 Operaciones Progresiva  (ce)*/
-        pec=(pte+le);
+        pec=(te+le);
         String  pec1 = convertir.convertirCadenamiento(pec);
 
         /*3 Operaciones ce*/
@@ -142,26 +139,26 @@ public class Espiral {
         pet=(pce+le);
         String  pet1 = convertir.convertirCadenamiento(pet);
 
-        resultado += "\n1ª Radio de la curva circular: "+ rc
-                            +"\n2ª Parametro de la espiral: " + k
+        resultado += "\n1ª Radio de la curva circular: "+ rc + " m"
+                            +"\n2ª Parametro de la espiral: " + k + " m"
                             +"\n3ª Deflexion de la espiral: " + gradosOE
-                            +"\n4ª Deflexion de la curva circular: " + decimalAc
-                            +"\n5ª Coordenada Ec de la curva en Xc : " + xc
-                            +"\n6ª Coordenada de Ec de la curva Yc: " + yc
-                            +"\n7ª Coordenadas del PC de la curva P: " + p
-                            +"\n8ª Coordenadas del PC de la curva K: " + pck
-                            +"\n9ª Tangente de la Espiral STE: " + te
-                            +"\n10ª Externa de la curva espiral Ec: " + ec
-                            +"\n11ª Tangente Larga TL: " + tl
-                            +"\n12ª Tangente Corta TC: " + tc
-                            +"\n13ª Cuerda Larga CLe: " + cle
-                            +"\n14ª Deflexion para Ec: " + oc
-                            +"\n15ª Longitud de la curva Circular: " + lc
+                            +"\n4ª Deflexion de la curva circular: " + decimalAc +" m"
+                            +"\n5ª Coordenada Ec de la curva en Xc : " + xc +" m"
+                            +"\n6ª Coordenada de Ec de la curva Yc: " + yc +" m"
+                            +"\n7ª Coordenadas del PC de la curva P: " + p +" m"
+                            +"\n8ª Coordenadas del PC de la curva K: " + pck +" m"
+                            +"\n9ª Tangente de la Espiral STE: " + te +" m"
+                            +"\n10ª Externa de la curva espiral Ec: " + ec +" m"
+                            +"\n11ª Tangente Larga TL: " + tl +" m"
+                            +"\n12ª Tangente Corta TC: " + tc +" m"
+                            +"\n13ª Cuerda Larga CLe: " + cle +" m"
+                            +"\n14ª Deflexion para Ec: " + pec +" m"
+                            +"\n15ª Longitud de la curva Circular: " + lc +" m"
                             +"\nCalculo de Cadenamientos"
-                            +"\n1ª Progresica de TE: " + pte1
-                            +"\n2ª Progresica de EC: " + pec1
-                            +"\n3ª Progresica de CE: " + pce1
-                            +"\n4ª Progresica de ET: " + pet1;
+                            +"\n1ª Progresica de TE: " + pte1 +" m"
+                            +"\n2ª Progresica de EC: " + pec1 +" m"
+                            +"\n3ª Progresica de CE: " + pce1 +" m"
+                            +"\n4ª Progresica de ET: " + pet1 +" m";
         return resultado;
     }
 }
