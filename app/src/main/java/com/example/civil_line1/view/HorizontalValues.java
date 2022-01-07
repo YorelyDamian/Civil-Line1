@@ -29,13 +29,13 @@ public class HorizontalValues extends AppCompatActivity {
     private EditText VP;
     private EditText GC;
     private String cadenaOperaciones;
-
+    private String direccion;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.horizontal_layout);
         initComponents();
-
+        direccion = getIntent().getStringExtra("direccion");
         /*Events*/
         btnReturn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -47,7 +47,14 @@ public class HorizontalValues extends AppCompatActivity {
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                createIntent(SaveActivity.class);
+                Intent intent = new Intent(HorizontalValues.this,SaveActivity.class);
+                intent.putExtra("AT",AngTan.getText().toString());
+                intent.putExtra("GC",GC.getText().toString().trim());
+                intent.putExtra("PI",PI.getText().toString().trim());
+                intent.putExtra("VP",VP.getText().toString().trim());
+                intent.putExtra("direccion",direccion);
+                intent.putExtra("padre","Horizontal");
+                startActivity(intent);
             }
         });
 
@@ -99,11 +106,6 @@ public class HorizontalValues extends AppCompatActivity {
         }
     }
 
-    private void createIntent(Class clase){
-        /*method to go to other screens*/
-        Intent intent = new Intent(this,clase);
-        startActivity(intent);
-    }
 
     private void initComponents(){
         btnReturn = (ImageButton) findViewById(R.id.HorizontalReturn);

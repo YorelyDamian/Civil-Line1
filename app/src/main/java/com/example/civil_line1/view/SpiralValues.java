@@ -27,6 +27,7 @@ public class SpiralValues extends AppCompatActivity {
     private EditText Le;
     private EditText DC;
     private String cadenaOperacionesEspiral;
+    private String direccion;
 
 
     @Override
@@ -46,7 +47,16 @@ public class SpiralValues extends AppCompatActivity {
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                createIntent(SaveActivity.class);
+                Intent intent = new Intent(SpiralValues.this,SaveActivity.class);
+                intent.putExtra("AT",AngTan.getText().toString());
+                intent.putExtra("GC",GC.getText().toString().trim());
+                intent.putExtra("PI",PI.getText().toString().trim());
+                intent.putExtra("VP",VP.getText().toString().trim());
+                intent.putExtra("LE",Le.getText().toString().trim());
+                intent.putExtra("DC",DC.getText().toString().trim());
+                intent.putExtra("direccion",direccion);
+                intent.putExtra("padre","Espiral");
+                startActivity(intent);
             }
         });
 
@@ -147,5 +157,7 @@ public class SpiralValues extends AppCompatActivity {
         GC = (EditText) findViewById(R.id.GCEspiral);
         Le = (EditText) findViewById(R.id.LEEspiral);
         DC = (EditText) findViewById(R.id.DCEspiral);
+        direccion = getIntent().getStringExtra("direccion");
+
     }
 }

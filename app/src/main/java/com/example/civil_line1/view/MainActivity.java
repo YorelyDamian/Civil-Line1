@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
     private RadioButton btnHorizontal;
     private RadioButton btnSpiral;
     private SwitchMaterial switchDirection;
-
+    private String direction;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         setTheme(R.style.Theme_CivilLine1);
@@ -53,10 +53,10 @@ public class MainActivity extends AppCompatActivity {
                 * direction false is right
                 */
 
-                boolean direction = true;
+                direction = "izq";
                 if (switchDirection.isChecked()){
                     /*Right*/
-                    direction = false;
+                    direction = "der";
                 }
                 if(btnSpiral.isChecked()){
                     createIntent(SpiralValues.class);
@@ -72,6 +72,7 @@ public class MainActivity extends AppCompatActivity {
     private void createIntent(Class clase){
     /*method to go to other screens*/
         Intent intent = new Intent(this,clase);
+        intent.putExtra("direccion",direction);
         startActivity(intent);
     }
 

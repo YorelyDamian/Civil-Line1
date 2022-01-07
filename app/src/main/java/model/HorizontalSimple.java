@@ -4,7 +4,9 @@ import java.text.DecimalFormat;
 
 public class HorizontalSimple {
     /*Creacion de variables para los datos de entrada*/
-
+    private int id;
+    private String direccion;
+    private String nombre;
     private String AT;
     private String GC;
     private double anguloTan;
@@ -24,6 +26,29 @@ public class HorizontalSimple {
     private double PC;
     private double PT;
 
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getDireccion() {
+        return direccion;
+    }
+
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
     public String getGC() {
         return GC;
     }
@@ -109,5 +134,10 @@ public class HorizontalSimple {
                         + "\nPC = " + PrC
                         + "\nPT = " + PrT;
         return operaciones;
+    }
+
+    @Override
+    public String toString() {
+        return nombre;
     }
 }

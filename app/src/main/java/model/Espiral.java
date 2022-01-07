@@ -2,14 +2,17 @@ package model;
 
 import java.text.DecimalFormat;
 public class Espiral {
-
+    /*variables de la Base de datos*/
+    private int id;
+    private String nombre;
+    private String direccion;
     /*Variables para los datos de entrada*/
     public double pi; /*Cadenamiento*/
     public String angTan; /*Total de la curva*/
-    public int vp; /*Velocidad de Proyecto*/
+    public double vp; /*Velocidad de Proyecto*/
     public String gc; /*Grado de curvatura*/
-    public int le; /*Longitud de la curvatura espiral*/
-    public int dc; /*Deflexion de cadenamiento*/
+    public double le; /*Longitud de la curvatura espiral*/
+    public double dc; /*Deflexion de cadenamiento*/
 
     /*Variables para las operaciones*/
     public double rc; /*Radio de la curva circular*/
@@ -42,17 +45,44 @@ public class Espiral {
     public double getPi() { return pi; }
     public void setPi(double pi) { this.pi = pi; }
     /*get y set de Vp*/
-    public int getVp() { return vp; }
-    public void setVp(int vp) { this.vp = vp; }
+    public double getVp() { return vp; }
+    public void setVp(double vp) { this.vp = vp; }
     /*get y set de gc*/
     public String getGc() { return gc; }
     public void setGc(String gc) { this.gc = gc; }
     /*get y set de le*/
-    public int getLe() { return le; }
-    public void setLe(int le) { this.le = le; }
+    public double getLe() { return le; }
+    public void setLe(double le) { this.le = le; }
     /*get y set de dc*/
-    public int getDc() { return dc; }
-    public void setDc(int dc) { this.dc = dc; }
+    public double getDc() { return dc; }
+    public void setDc(double dc) { this.dc = dc; }
+
+
+    /*Get y set de los datos para la BD*/
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getDireccion() {
+        return direccion;
+    }
+
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
+    }
 
     public String operaciones(){
         String resultado = "Curva en Espiral\n";
@@ -163,5 +193,10 @@ public class Espiral {
                             +"\n3ª Progresica de CE: " + pce1 +" m"
                             +"\n4ª Progresica de ET: " + pet1 +" m";
         return resultado;
+    }
+
+    @Override
+    public String toString() {
+        return nombre;
     }
 }
