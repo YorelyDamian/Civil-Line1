@@ -149,6 +149,15 @@
            android:layout_gravity="center_horizontal"
            android:orientation="vertical">
 
+           <ImageView
+               android:layout_width="300dp"
+               android:layout_height="300dp"
+               android:layout_gravity="center_horizontal"
+               android:layout_marginStart="40dp"
+               android:layout_marginTop="20dp"
+               android:src="@drawable/curvahorizontal"
+               android:layout_marginEnd="20dp" />
+
        </LinearLayout>
 
 

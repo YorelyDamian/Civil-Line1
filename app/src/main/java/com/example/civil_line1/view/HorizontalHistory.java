@@ -19,6 +19,7 @@ import model.HorizontalSimple;
 
 public class HorizontalHistory extends AppCompatActivity {
     private ImageButton btnRetur;
+    private ImageButton btnDelete;
     private ListView lista;
     ArrayList<HorizontalSimple> listaCurvas = new ArrayList<HorizontalSimple>();
 
@@ -65,6 +66,7 @@ public class HorizontalHistory extends AppCompatActivity {
 
     private void initComponents(){
         btnRetur = (ImageButton) findViewById(R.id.HorizontalHistoryReturn);
+        btnDelete = (ImageButton) findViewById(R.id.HorizontalHistorybote);
         lista = (ListView) findViewById(R.id.lv_datosHorizontal);
         buscar();
     }
