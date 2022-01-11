@@ -25,13 +25,38 @@ public class HorizontalHistory extends AppCompatActivity {
     private ImageButton btnRetur;
     private ImageButton btnDelete;
     private ListView lista;
-    ArrayList<HorizontalSimple> listaCurvas = new ArrayList<HorizontalSimple>();
+    private ArrayList<HorizontalSimple> listaCurvas = new ArrayList<HorizontalSimple>();
+    private boolean eliminar = false;
+    private ArrayAdapter adaptador;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.horizontal_history_layout);
         initComponents();
+        btnDelete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                eliminar = !eliminar;
+                if (eliminar){
+                    Toast.makeText(HorizontalHistory.this, "pulsa el elemento a eliminar",Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+        lista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                HorizontalSimple curva = (HorizontalSimple) parent.getItemAtPosition(position);
+                if (eliminar){
+                    /*Eliminar datos*/
+                    int curvaid = curva.getId();
+                    eliminarRegistro(curvaid);
+                    //buscar();
+                }else{
+                    /*Editar datos*/
+                }
+            }
+        });
 
         btnRetur.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -49,6 +74,15 @@ public class HorizontalHistory extends AppCompatActivity {
             }
         });
     }
+
+    private void eliminarRegistro(int idCurva) {
+        DbHelper admin = new DbHelper(HorizontalHistory.this);
+        SQLiteDatabase db = admin.getWritableDatabase();
+        db.delete(DbHelper.TABLA_SIMPLE,"id="+idCurva,null);
+        db.close();
+        adaptador.notifyDataSetChanged();
+    }
+
     private void buscar(){
         DbHelper admin = new DbHelper(HorizontalHistory.this);
         SQLiteDatabase baseDeDatos = admin.getReadableDatabase();
@@ -73,7 +107,7 @@ public class HorizontalHistory extends AppCompatActivity {
     }
 
     private void agregarAListView() {
-        ArrayAdapter adaptador = new ArrayAdapter(this, android.R.layout.simple_list_item_1,listaCurvas);
+        adaptador = new ArrayAdapter(this, android.R.layout.simple_list_item_1,listaCurvas);
         lista.setAdapter(adaptador);
     }
 
