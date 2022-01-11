@@ -2,17 +2,21 @@ package com.example.civil_line1.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.example.civil_line1.R;
 import com.example.civil_line1.db.DbHelper;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 import model.HorizontalSimple;
@@ -33,6 +37,15 @@ public class HorizontalHistory extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 HorizontalHistory.super.onBackPressed();
+            }
+        });
+
+        lista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent intent = new Intent(HorizontalHistory.this, HorizontalValues.class);
+                intent.putExtra("objetoData", (Serializable) listaCurvas.get(i));
+                startActivity(intent);
             }
         });
     }
