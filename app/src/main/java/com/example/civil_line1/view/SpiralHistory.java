@@ -6,9 +6,11 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.example.civil_line1.R;
 import com.example.civil_line1.db.DbHelper;
@@ -20,19 +22,45 @@ import model.HorizontalSimple;
 
 public class SpiralHistory extends AppCompatActivity {
     private ImageButton btnReturn;
+    private ImageButton btnDelete;
     private ListView lista;
-    ArrayList<Espiral> listaCurvas = new ArrayList<Espiral>();
+    private boolean eliminar = false;
+    private ArrayAdapter adaptador;
+    private ArrayList<Espiral> listaCurvas = new ArrayList<Espiral>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.spiral_history_layout);
-
         initElements();
+
+
         btnReturn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 SpiralHistory.super.onBackPressed();
+            }
+        });
+        btnDelete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                eliminar = !eliminar;
+                if (eliminar){
+                    Toast.makeText(SpiralHistory.this, "pulsa el elemento a eliminar",Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+        lista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Espiral curva = (Espiral) parent.getItemAtPosition(position);
+                if (eliminar){
+                    /*Eliminar datos*/
+                    int curvaid = curva.getId();
+                    eliminarRegistro(curvaid);
+                }else{
+                    /*Editar datos*/
+                }
             }
         });
     }
@@ -61,13 +89,22 @@ public class SpiralHistory extends AppCompatActivity {
         }
         baseDeDatos.close();
     }
+    private void eliminarRegistro(int idCurva) {
+        DbHelper admin = new DbHelper(SpiralHistory.this);
+        SQLiteDatabase db = admin.getWritableDatabase();
+        db.delete(DbHelper.TABLA_ESPIRAL,"id="+idCurva,null);
+        db.close();
+        adaptador.notifyDataSetChanged();
+
+    }
 
     private void agregarAListView() {
-        ArrayAdapter adaptador = new ArrayAdapter(this, android.R.layout.simple_list_item_1,listaCurvas);
+        adaptador = new ArrayAdapter(this, android.R.layout.simple_list_item_1,listaCurvas);
         lista.setAdapter(adaptador);
     }
     private void initElements(){
         btnReturn = (ImageButton) findViewById(R.id.historyReturn);
+        btnDelete = (ImageButton) findViewById(R.id.Espiralbote);
         lista = (ListView) findViewById(R.id.lv_datosEspiral);
         buscar();
     }
