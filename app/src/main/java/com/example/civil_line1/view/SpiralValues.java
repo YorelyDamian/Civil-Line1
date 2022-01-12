@@ -35,6 +35,7 @@ public class SpiralValues extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.spiral_layout);
         initComponents();
+        direccion = getIntent().getStringExtra("direccion");
 
         /*Definir tipo de entrada*/
         String tipo=getIntent().getStringExtra("tipo");
@@ -82,10 +83,10 @@ public class SpiralValues extends AppCompatActivity {
                         Espiral obj = new Espiral();
                         obj.setAngTan(AngTan.getText().toString());
                         obj.setPi(Double.parseDouble(PI.getText().toString().trim()));
-                        obj.setVp(Integer.parseInt(VP.getText().toString().trim()));
+                        obj.setVp(Double.parseDouble(VP.getText().toString().trim()));
                         obj.setGc(GC.getText().toString());
-                        obj.setLe(Integer.parseInt(Le.getText().toString().trim()));
-                        obj.setDc(Integer.parseInt(DC.getText().toString().trim()));
+                        obj.setLe(Double.parseDouble(Le.getText().toString().trim()));
+                        obj.setDc(Double.parseDouble(DC.getText().toString().trim()));
                         cadenaOperacionesEspiral = obj.operaciones();
                     }
                 }else{

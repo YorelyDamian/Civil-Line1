@@ -39,7 +39,6 @@ public class DbHelper extends SQLiteOpenHelper {
                 "LE REAL NOT NULL," +
                 "DC REAL NOT NULL," +
                 "direccion TEXT NOT NULL)");
-
     }
 
     @Override
