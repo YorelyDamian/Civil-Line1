@@ -2,6 +2,7 @@ package com.example.civil_line1.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -60,6 +61,16 @@ public class SpiralHistory extends AppCompatActivity {
                     eliminarRegistro(curvaid);
                 }else{
                     /*Editar datos*/
+                    Intent intent = new Intent(SpiralHistory.this,SpiralValues.class);
+                    intent.putExtra("tipo","Recuperacion");
+                    intent.putExtra("PI",curva.getPi());
+                    intent.putExtra("AT",curva.getAngTan());
+                    intent.putExtra("GC",curva.getGc());
+                    intent.putExtra("VP",curva.getVp());
+                    intent.putExtra("LE",curva.getLe());
+                    intent.putExtra("DC",curva.getDc());
+                    intent.putExtra("direccion",curva.getDireccion());
+                    startActivity(intent);
                 }
             }
         });

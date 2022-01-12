@@ -36,6 +36,17 @@ public class SpiralValues extends AppCompatActivity {
         setContentView(R.layout.spiral_layout);
         initComponents();
 
+        /*Definir tipo de entrada*/
+        String tipo=getIntent().getStringExtra("tipo");
+        if (tipo.equals("Recuperacion")){
+            /*El padre viene del un historial*/
+            PI.setText(getIntent().getDoubleExtra("PI",0.00)+"");
+            AngTan.setText(getIntent().getStringExtra("AT"));
+            VP.setText(getIntent().getDoubleExtra("VP",0.00)+"");
+            GC.setText(getIntent().getStringExtra("GC"));
+            Le.setText(getIntent().getDoubleExtra("LE",0.00)+"");
+            DC.setText(getIntent().getDoubleExtra("DC",0.00)+"");
+        }
         /*Events*/
         btnReturn.setOnClickListener(new View.OnClickListener() {
             @Override
