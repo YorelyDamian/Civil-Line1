@@ -73,6 +73,7 @@ public class MainActivity extends AppCompatActivity {
     /*method to go to other screens*/
         Intent intent = new Intent(this,clase);
         intent.putExtra("direccion",direction);
+        intent.putExtra("tipo","normal");
         startActivity(intent);
     }
 

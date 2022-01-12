@@ -38,8 +38,8 @@ public class HorizontalHistory extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 eliminar = !eliminar;
-                if (eliminar){
-                    Toast.makeText(HorizontalHistory.this, "pulsa el elemento a eliminar",Toast.LENGTH_SHORT).show();
+                if (eliminar) {
+                    Toast.makeText(HorizontalHistory.this, "pulsa el elemento a eliminar", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -47,13 +47,22 @@ public class HorizontalHistory extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 HorizontalSimple curva = (HorizontalSimple) parent.getItemAtPosition(position);
-                if (eliminar){
+                if (eliminar) {
                     /*Eliminar datos*/
                     int curvaid = curva.getId();
                     eliminarRegistro(curvaid);
                     //buscar();
-                }else{
+                } else {
                     /*Editar datos*/
+                    Intent intent = new Intent(HorizontalHistory.this,HorizontalValues.class);
+                    intent.putExtra("tipo","Recuperacion");
+                    intent.putExtra("AT",curva.getAT());
+                    intent.putExtra("GC",curva.getGC());
+                    intent.putExtra("PI",curva.getPuntoInter());
+                    intent.putExtra("VP",curva.getVelocProy());
+                    intent.putExtra("direccion",curva.getDireccion());
+                    startActivity(intent);
+
                 }
             }
         });
@@ -65,14 +74,6 @@ public class HorizontalHistory extends AppCompatActivity {
             }
         });
 
-        lista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Intent intent = new Intent(HorizontalHistory.this, HorizontalValues.class);
-                intent.putExtra("objetoData", (Serializable) listaCurvas.get(i));
-                startActivity(intent);
-            }
-        });
     }
 
     private void eliminarRegistro(int idCurva) {

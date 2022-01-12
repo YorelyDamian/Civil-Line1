@@ -32,14 +32,22 @@ public class HorizontalValues extends AppCompatActivity {
     private EditText GC;
     private String cadenaOperaciones;
     private String direccion;
-    private ListView lista;
-    private HorizontalSimple item;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.horizontal_layout);
         initComponents();
         direccion = getIntent().getStringExtra("direccion");
+
+        /*Definir tipo de entrada*/
+        String tipo=getIntent().getStringExtra("tipo");
+        if (tipo.equals("Recuperacion")){
+            /*El padre viene del un historial*/
+            AngTan.setText(getIntent().getStringExtra("AT"));
+            GC.setText(getIntent().getStringExtra("GC"));
+            PI.setText(getIntent().getDoubleExtra("PI",0.00)+"");
+            VP.setText(getIntent().getDoubleExtra("VP",0.00)+"");
+        }
         /*Events*/
         btnReturn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -120,6 +128,5 @@ public class HorizontalValues extends AppCompatActivity {
         PI = (EditText) findViewById(R.id.PISimple);
         VP = (EditText) findViewById(R.id.VPSimple);
         GC = (EditText) findViewById(R.id.GCSimple);
-        lista = (ListView) findViewById(R.id.lv_datosHorizontal);
     }
 }
