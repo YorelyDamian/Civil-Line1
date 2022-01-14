@@ -187,7 +187,8 @@ public class Espiral {
                             +"\n13ª Cuerda Larga CLe: " + df.format(cle)+" m"
                             +"\n14ª Deflexion para Ec: " + df.format(oc)+" m"
                             +"\n15ª Longitud de la curva Circular: " + df.format(lc)+" m"
-                            +"\nCalculo de Cadenamientos"
+                            +"\nCalculo de Cadenamientos"+
+                            "\n"
                             +"\n1ª Progresica de TE: " + pte1+" m"
                             +"\n2ª Progresica de EC: " + pec1 +" m"
                             +"\n3ª Progresica de CE: " + pce1 +" m"
