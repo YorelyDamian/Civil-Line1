@@ -14,6 +14,7 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import com.example.civil_line1.R;
+import com.example.civil_line1.db.DBQuerys;
 import com.example.civil_line1.db.DbHelper;
 
 import java.util.ArrayList;
@@ -28,6 +29,7 @@ public class SpiralHistory extends AppCompatActivity {
     private boolean eliminar = false;
     private ArrayAdapter adaptador;
     private ArrayList<Espiral> listaCurvas = new ArrayList<Espiral>();
+    DBQuerys querys = new DBQuerys();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,7 +60,7 @@ public class SpiralHistory extends AppCompatActivity {
                 if (eliminar){
                     /*Eliminar datos*/
                     int curvaid = curva.getId();
-                    eliminarRegistro(curvaid);
+                    querys.eliminarRegistro(curvaid,DbHelper.TABLA_ESPIRAL,SpiralHistory.this);
                 }else{
                     /*Editar datos*/
                     Intent intent = new Intent(SpiralHistory.this,SpiralValues.class);
@@ -75,38 +77,10 @@ public class SpiralHistory extends AppCompatActivity {
             }
         });
     }
-    private void buscar(){
-        DbHelper admin = new DbHelper(SpiralHistory.this);
-        SQLiteDatabase baseDeDatos = admin.getReadableDatabase();
-        Espiral curva = null;
-        /*Consulta de la tabla 'SELECT * FROM t_simple;'*/
-        Cursor sqlOut = baseDeDatos.rawQuery("SELECT * FROM "+admin.TABLA_ESPIRAL,null);
 
-        /*Recorremos la salida de la consulta, lo guardamos en un objeto de la curva y agregamos a la listaCurvas*/
-        while (sqlOut.moveToNext()){
-            curva = new Espiral();
-            curva.setId(sqlOut.getInt(0));
-            curva.setNombre(sqlOut.getString(1));
-            curva.setAngTan(sqlOut.getString(2));
-            curva.setPi(sqlOut.getDouble(3));
-            curva.setVp(sqlOut.getDouble(4));
-            curva.setGc(sqlOut.getString(5));
-            curva.setLe(sqlOut.getDouble(6));
-            curva.setDc(sqlOut.getDouble(7));
-            curva.setDireccion(sqlOut.getString(8));
-
-            listaCurvas.add(curva);
-            agregarAListView();
-        }
-        baseDeDatos.close();
-    }
-    private void eliminarRegistro(int idCurva) {
-        DbHelper admin = new DbHelper(SpiralHistory.this);
-        SQLiteDatabase db = admin.getWritableDatabase();
-        db.delete(DbHelper.TABLA_ESPIRAL,"id="+idCurva,null);
-        db.close();
-        adaptador.notifyDataSetChanged();
-
+    private void buscar() {
+        listaCurvas = querys.buscarEspiral(SpiralHistory.this);
+        agregarAListView();
     }
 
     private void agregarAListView() {

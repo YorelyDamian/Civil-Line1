@@ -107,15 +107,8 @@ public class HorizontalValues extends AppCompatActivity {
 
 
     private boolean estanLlenos(){
-        if(AngTan.getText().toString().isEmpty() ||
-                PI.getText().toString().isEmpty() ||
-                VP.getText().toString().isEmpty() ||
-                GC.getText().toString().isEmpty()){
-            //Alguno esta vacio
-            return false;
-        }else{
-            return true;
-        }
+        return (AngTan.getText().toString().isEmpty() || PI.getText().toString().isEmpty() ||
+                VP.getText().toString().isEmpty() || GC.getText().toString().isEmpty())?false:true;
     }
 
 

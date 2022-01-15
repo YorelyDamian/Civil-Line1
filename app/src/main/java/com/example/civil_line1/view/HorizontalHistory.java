@@ -14,6 +14,7 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import com.example.civil_line1.R;
+import com.example.civil_line1.db.DBQuerys;
 import com.example.civil_line1.db.DbHelper;
 
 import java.io.Serializable;
@@ -28,12 +29,13 @@ public class HorizontalHistory extends AppCompatActivity {
     private ArrayList<HorizontalSimple> listaCurvas = new ArrayList<HorizontalSimple>();
     private boolean eliminar = false;
     private ArrayAdapter adaptador;
-
+    private DBQuerys querys = new DBQuerys();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.horizontal_history_layout);
         initComponents();
+
         btnDelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -43,6 +45,7 @@ public class HorizontalHistory extends AppCompatActivity {
                 }
             }
         });
+
         lista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -50,7 +53,8 @@ public class HorizontalHistory extends AppCompatActivity {
                 if (eliminar) {
                     /*Eliminar datos*/
                     int curvaid = curva.getId();
-                    eliminarRegistro(curvaid);
+
+                    querys.eliminarRegistro(curvaid,DbHelper.TABLA_SIMPLE,HorizontalHistory.this);
                     //buscar();
                 } else {
                     /*Editar datos*/
@@ -73,38 +77,11 @@ public class HorizontalHistory extends AppCompatActivity {
                 HorizontalHistory.super.onBackPressed();
             }
         });
-
-    }
-
-    private void eliminarRegistro(int idCurva) {
-        DbHelper admin = new DbHelper(HorizontalHistory.this);
-        SQLiteDatabase db = admin.getWritableDatabase();
-        db.delete(DbHelper.TABLA_SIMPLE,"id="+idCurva,null);
-        db.close();
-        adaptador.notifyDataSetChanged();
     }
 
     private void buscar(){
-        DbHelper admin = new DbHelper(HorizontalHistory.this);
-        SQLiteDatabase baseDeDatos = admin.getReadableDatabase();
-        HorizontalSimple curva = null;
-        /*Consulta de la tabla 'SELECT * FROM t_simple;'*/
-        Cursor sqlOut = baseDeDatos.rawQuery("SELECT * FROM "+admin.TABLA_SIMPLE,null);
-
-        /*Recorremos la salida de la consulta, lo guardamos en un objeto de la curva y agregamos a la listaCurvas*/
-        while (sqlOut.moveToNext()){
-            curva = new HorizontalSimple();
-            curva.setId(sqlOut.getInt(0));
-            curva.setNombre(sqlOut.getString(1));
-            curva.setAT(sqlOut.getString(2));
-            curva.setPuntoInter(sqlOut.getDouble(3));
-            curva.setVelocProy(sqlOut.getDouble(4));
-            curva.setGC(sqlOut.getString(5));
-            curva.setDireccion(sqlOut.getString(6));
-            listaCurvas.add(curva);
-            agregarAListView();
-        }
-        baseDeDatos.close();
+        listaCurvas = querys.buscarHorizontal(HorizontalHistory.this);
+        agregarAListView();
     }
 
     private void agregarAListView() {
